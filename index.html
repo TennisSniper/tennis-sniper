@@ -10,29 +10,25 @@
 <title>Tennis Sniper</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap');
-
 :root {
-–bg:#07080f; –card:#0e0f1c; –card2:#151628; –line:#1e2038;
-–green:#0dff8c; –gbg:rgba(13,255,140,.1);
-–red:#ff2d55;   –rbg:rgba(255,45,85,.1);
-–amber:#ffcc00; –abg:rgba(255,204,0,.1);
-–blue:#3d8eff;  –bbg:rgba(61,142,255,.1);
-–grey:#888aaa;  –grbg:rgba(136,138,170,.1);
-–text:#e2e4f0;  –muted:#555880; –muted2:#2a2c4a;
+  --bg:#07080f; --card:#0e0f1c; --card2:#151628; --line:#1e2038;
+  --green:#0dff8c; --gbg:rgba(13,255,140,.1);
+  --red:#ff2d55;   --rbg:rgba(255,45,85,.1);
+  --amber:#ffcc00; --abg:rgba(255,204,0,.1);
+  --blue:#3d8eff;  --bbg:rgba(61,142,255,.1);
+  --grey:#888aaa;  --grbg:rgba(136,138,170,.1);
+  --text:#e2e4f0;  --muted:#555880; --muted2:#2a2c4a;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{background:var(–bg);color:var(–text);font-family:‘DM Mono’,monospace;min-height:100%}
-
+html,body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;min-height:100%}
 .wrap{max-width:460px;margin:0 auto;padding:18px 13px 90px}
 
-/* HEADER */
 .hdr{text-align:center;padding:8px 0 20px}
 .logo{font-family:‘Bebas Neue’,sans-serif;font-size:54px;letter-spacing:8px;line-height:1;
 background:linear-gradient(135deg,var(–green),#00c2ff);
 -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .tagline{font-size:9px;letter-spacing:3px;color:var(–muted);text-transform:uppercase;margin-top:3px}
 
-/* CLOCK */
 .clkbar{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;margin-bottom:11px}
 .clkbox{background:var(–card);border:1px solid var(–line);border-radius:13px;padding:11px 9px;text-align:center}
 .clknum{font-family:‘Bebas Neue’,sans-serif;font-size:30px;letter-spacing:2px;line-height:1}
@@ -43,7 +39,6 @@ background:linear-gradient(135deg,var(–green),#00c2ff);
 .cdnum.hot{color:var(–red);animation:fl .3s infinite alternate}
 @keyframes fl{to{opacity:.15}}
 
-/* STATUS */
 .sb{background:var(–card);border:1px solid var(–line);border-radius:10px;
 padding:9px 13px;margin-bottom:10px;display:flex;align-items:center;gap:9px;font-size:11px}
 .dot{width:7px;height:7px;border-radius:50%;background:var(–muted2);flex-shrink:0}
@@ -56,20 +51,16 @@ padding:9px 13px;margin-bottom:10px;display:flex;align-items:center;gap:9px;font
 .sbatt{font-family:‘Bebas Neue’,sans-serif;font-size:17px;display:none}
 .sbatt b{color:var(–green)}
 
-/* CARD */
 .card{background:var(–card);border:1px solid var(–line);border-radius:15px;padding:14px;margin-bottom:10px}
 .ctitle{font-size:9px;letter-spacing:3px;color:var(–muted);text-transform:uppercase;
 margin-bottom:12px;display:flex;align-items:center;gap:7px}
 .ctitle::after{content:’’;flex:1;height:1px;background:var(–line)}
-
-/* STEP BADGE */
 .step{display:inline-flex;align-items:center;justify-content:center;
 width:20px;height:20px;border-radius:50%;border:1px solid var(–muted);
 font-size:10px;color:var(–muted);flex-shrink:0;margin-right:2px}
 .step.done{border-color:var(–green);color:var(–green);background:var(–gbg)}
 .step.active{border-color:var(–amber);color:var(–amber);background:var(–abg)}
 
-/* FIELD */
 .field{margin-bottom:9px}
 .field label{display:block;font-size:9px;color:var(–muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
 .field input,.field select{width:100%;background:var(–card2);border:1px solid var(–line);border-radius:8px;
@@ -79,7 +70,6 @@ outline:none;-webkit-appearance:none;appearance:none}
 .field input[type=date],.field input[type=time]{color-scheme:dark}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:9px}
 
-/* CONNECT BUTTON */
 .btn-connect{width:100%;padding:13px;border-radius:10px;font-family:‘Bebas Neue’,sans-serif;
 font-size:20px;letter-spacing:3px;cursor:pointer;transition:all .2s;
 border:2px solid var(–blue);background:var(–bbg);color:var(–blue)}
@@ -87,54 +77,41 @@ border:2px solid var(–blue);background:var(–bbg);color:var(–blue)}
 .btn-connect.loading{border-color:var(–amber);color:var(–amber);animation:pu .6s infinite}
 .btn-connect.done{border-color:var(–green);background:var(–gbg);color:var(–green)}
 
-/* CONN STATUS */
 .conn-status{margin-top:9px;padding:10px 12px;background:var(–card2);border-radius:8px;
 font-size:10px;color:var(–muted);line-height:1.8;display:none}
 .conn-status.show{display:block}
-.conn-status b{color:var(–text)}
-.conn-ok{color:var(–green)} .conn-warn{color:var(–amber)} .conn-err{color:var(–red)}
+.conn-ok{color:var(–green)}.conn-warn{color:var(–amber)}.conn-err{color:var(–red)}
 
-/* QUICK DATES */
 .qdrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
 .qd{padding:6px 9px;background:var(–card2);border:1px solid var(–line);border-radius:7px;
 font-size:10px;color:var(–muted);cursor:pointer;white-space:nowrap;transition:all .15s}
 .qd.on{background:var(–gbg);border-color:var(–green);color:var(–green)}
 
-/* SLOTS 1H */
 .slots1h{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:9px}
 .sl{padding:8px 3px;background:var(–card2);border:1px solid var(–line);border-radius:7px;
-color:var(–muted);font-size:11px;cursor:pointer;text-align:center;transition:all .12s;position:relative}
-.sl:active{transform:scale(.95)}
+color:var(–muted);font-size:11px;cursor:pointer;text-align:center;transition:all .12s}
 .sl.on{background:var(–gbg);border-color:var(–green);color:var(–green);font-weight:500}
 .sl.blocked{opacity:.3;cursor:not-allowed;background:var(–rbg);border-color:var(–red)}
 .sl.partial{border-color:var(–amber);color:var(–amber)}
-.sl-dot{position:absolute;top:3px;right:3px;width:5px;height:5px;border-radius:50%}
 
-/* GRILLE COURTS */
 .courts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px}
 .ct{background:var(–card2);border:1px solid var(–line);border-radius:11px;
 padding:11px 8px;cursor:pointer;transition:all .15s;position:relative;text-align:center}
-.ct:active:not(.na):not(.blocked){transform:scale(.95)}
 .ct.p1{background:var(–abg);border-color:var(–amber)}
 .ct.p2{background:var(–gbg);border-color:var(–green)}
 .ct.na{opacity:.3;cursor:not-allowed;background:var(–rbg);border-color:var(–red)}
 .ct.maint{opacity:.25;cursor:not-allowed;background:var(–grbg);border-color:var(–grey)}
 .ct-n{font-family:‘Bebas Neue’,sans-serif;font-size:24px;letter-spacing:1px;line-height:1}
-.ct-sub{font-size:8px;letter-spacing:1px;color:var(–muted);text-transform:uppercase;margin-top:2px;
-white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ct-sub{font-size:8px;letter-spacing:1px;color:var(–muted);text-transform:uppercase;margin-top:2px}
 .ct-badge{position:absolute;top:4px;right:4px;font-size:7px;font-weight:700;
 letter-spacing:.5px;padding:1px 4px;border-radius:3px}
-.bp1{background:var(–amber);color:#000}
-.bp2{background:rgba(13,255,140,.3);color:var(–green)}
-.bna{background:rgba(255,45,85,.3);color:var(–red)}
-.bm{background:rgba(136,138,170,.3);color:var(–grey)}
+.bp1{background:var(–amber);color:#000}.bp2{background:rgba(13,255,140,.3);color:var(–green)}
+.bna{background:rgba(255,45,85,.3);color:var(–red)}.bm{background:rgba(136,138,170,.3);color:var(–grey)}
 
-/* GRILLE LEGEND */
 .legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;font-size:9px;color:var(–muted)}
 .lg-item{display:flex;align-items:center;gap:4px}
 .lg-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
 
-/* PARTNERS */
 .pts{display:flex;flex-direction:column;gap:6px}
 .pt{display:flex;align-items:center;gap:9px;background:var(–card2);border:1px solid var(–line);
 border-radius:10px;padding:9px 11px;cursor:pointer;transition:all .15s}
@@ -146,30 +123,26 @@ font-family:‘Bebas Neue’,sans-serif;letter-spacing:1px;color:var(–muted)}
 .ptname{font-size:12px;font-weight:500;flex:1}
 .ptval{font-size:9px;color:var(–muted);letter-spacing:1px}
 
-/* BURST */
 .brow{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 input[type=range]{flex:1;-webkit-appearance:none;height:3px;background:var(–line);border-radius:2px;outline:none}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(–green);cursor:pointer}
 .bval{font-family:‘Bebas Neue’,sans-serif;font-size:28px;color:var(–green);min-width:42px;text-align:right;line-height:1}
 
-/* SUMMARY */
 .sum{background:rgba(13,255,140,.05);border:1px solid rgba(13,255,140,.2);border-radius:12px;
 padding:11px 13px;font-size:11px;color:var(–muted);line-height:2.1;margin-bottom:10px;display:none}
 .sum.on{display:block}
-.sum b{color:var(–green)} .sep{color:var(–line);margin:0 4px}
+.sum b{color:var(–green)}.sep{color:var(–line);margin:0 4px}
 
-/* NOTE */
 .note{font-size:10px;color:var(–muted);line-height:1.6;padding:7px 10px;margin-top:8px;
 background:rgba(255,204,0,.04);border-left:2px solid rgba(255,204,0,.3);border-radius:0 5px 5px 0}
 
-/* FIRE */
 .btn-fire{width:100%;padding:17px;border-radius:13px;font-family:‘Bebas Neue’,sans-serif;
 font-size:24px;letter-spacing:4px;cursor:pointer;transition:all .18s;
 border:2px solid var(–green);background:transparent;color:var(–green);position:relative;overflow:hidden}
 .btn-fire::before{content:’’;position:absolute;inset:0;background:var(–green);
 transform:scaleX(0);transform-origin:left;transition:transform .18s}
-.btn-fire:active::before,.btn-fire:hover::before{transform:scaleX(1)}
-.btn-fire:active,.btn-fire:hover{color:#000}
+.btn-fire:active::before{transform:scaleX(1)}
+.btn-fire:active{color:#000}
 .btn-fire span{position:relative;z-index:1}
 .btn-fire.off{border-color:var(–muted);color:var(–muted);pointer-events:none}
 .btn-fire.armed{border-color:var(–amber);color:var(–amber)}
@@ -185,13 +158,12 @@ border-radius:8px;color:var(–muted);font-family:‘DM Mono’,monospace;font-s
 .btn-dis.on{display:block}
 .btn-dis:active{border-color:var(–red);color:var(–red)}
 
-/* LOG */
 .logwrap{background:var(–card);border:1px solid var(–line);border-radius:13px;overflow:hidden;margin-top:10px}
 .loghd{background:var(–card2);border-bottom:1px solid var(–line);padding:8px 12px;
 display:flex;justify-content:space-between;align-items:center}
 .logt{font-size:9px;color:var(–muted);letter-spacing:3px;text-transform:uppercase}
 .logcl{background:none;border:none;color:var(–muted2);font-family:‘DM Mono’,monospace;font-size:10px;cursor:pointer}
-.logbd{height:130px;overflow-y:auto;padding:8px 12px;font-size:10px;line-height:1.9}
+.logbd{height:160px;overflow-y:auto;padding:8px 12px;font-size:10px;line-height:1.9}
 .le{display:flex;gap:9px}
 .lt{color:var(–muted2);white-space:nowrap;font-size:9px}
 .li{color:var(–blue)}.lok{color:var(–green)}.ler{color:var(–red)}.lw{color:var(–amber)}.ld{color:var(–muted)}
@@ -207,8 +179,6 @@ display:flex;justify-content:space-between;align-items:center}
   <div class="logo">SNIPER</div>
   <div class="tagline">Tennis &middot; Club Borotra &middot; Courbevoie</div>
 </div>
-
-<!-- HORLOGE -->
 
 <div class="clkbar">
   <div class="clkbox">
@@ -226,17 +196,15 @@ display:flex;justify-content:space-between;align-items:center}
   </div>
 </div>
 
-<!-- STATUS -->
-
 <div class="sb">
   <div class="dot" id="dot"></div>
   <span class="sbmsg" id="sbmsg">Etape 1 : connexion</span>
   <span class="sbatt" id="sbatt">Tentatives : <b id="attn">0</b></span>
 </div>
 
-<!-- ETAPE 1 : CONNEXION -->
+<!-- ETAPE 1 -->
 
-<div class="card" id="card-conn">
+<div class="card">
   <div class="ctitle"><span class="step active" id="s1">1</span>Connexion &amp; chargement grille</div>
   <div class="row2">
     <div class="field"><label>Login</label>
@@ -259,18 +227,18 @@ display:flex;justify-content:space-between;align-items:center}
     SE CONNECTER ET CHARGER
   </button>
   <div class="conn-status" id="connstatus"></div>
-  <div class="note">Connexion au site pour verifier les terrains disponibles a cette date.</div>
+  <div class="note">Proxy CORS actif. Connexion directe via premier-service.fr.</div>
 </div>
 
-<!-- ETAPE 2 : CRENEAU -->
+<!-- ETAPE 2 -->
 
 <div class="card" id="card-slot" style="opacity:.4;pointer-events:none">
   <div class="ctitle"><span class="step" id="s2">2</span>Creneau de jeu (1h)</div>
   <div class="slots1h" id="slotsgrid"></div>
-  <div class="note">Creneaux d'1 heure uniquement. Gris = bloque par prof ou maintenance.</div>
+  <div class="note">Creneaux d'1 heure. Gris = bloque par prof ou maintenance.</div>
 </div>
 
-<!-- ETAPE 3 : TERRAINS -->
+<!-- ETAPE 3 -->
 
 <div class="card" id="card-courts" style="opacity:.4;pointer-events:none">
   <div class="ctitle"><span class="step" id="s3">3</span>Choix des terrains</div>
@@ -281,20 +249,20 @@ display:flex;justify-content:space-between;align-items:center}
   <div class="legend">
     <div class="lg-item"><div class="lg-dot" style="background:var(--amber)"></div>Priorite 1</div>
     <div class="lg-item"><div class="lg-dot" style="background:var(--green)"></div>Alternatif</div>
-    <div class="lg-item"><div class="lg-dot" style="background:var(--red)"></div>Pris (prof/resa)</div>
+    <div class="lg-item"><div class="lg-dot" style="background:var(--red)"></div>Pris</div>
     <div class="lg-item"><div class="lg-dot" style="background:var(--grey)"></div>Maintenance</div>
   </div>
   <div class="note">1 tap = Priorite &bull; 2 taps = Alternatif &bull; 3 taps = off</div>
 </div>
 
-<!-- ETAPE 4 : PARTENAIRE -->
+<!-- ETAPE 4 -->
 
 <div class="card" id="card-partner" style="opacity:.4;pointer-events:none">
   <div class="ctitle"><span class="step" id="s4">4</span>Partenaire</div>
   <div class="pts" id="plist"></div>
 </div>
 
-<!-- ETAPE 5 : RAFALE -->
+<!-- ETAPE 5 -->
 
 <div class="card" id="card-burst" style="opacity:.4;pointer-events:none">
   <div class="ctitle"><span class="step" id="s5">5</span>Parametres de rafale</div>
@@ -313,14 +281,10 @@ display:flex;justify-content:space-between;align-items:center}
 
 <div class="sum" id="sum"></div>
 
-<!-- BOUTON FEU -->
-
 <div>
   <button class="btn-fire off" id="btnfire" onclick="armOrFire()"><span id="firelbl">CONNECTEZ-VOUS D'ABORD</span></button>
   <button class="btn-dis" id="btndis" onclick="disarm()">Desarmer</button>
 </div>
-
-<!-- LOG -->
 
 <div class="logwrap">
   <div class="loghd">
@@ -334,19 +298,78 @@ display:flex;justify-content:space-between;align-items:center}
 
 <script>
 // ============================================================
-// CONFIG - Club Borotra, Courbevoie
-// Protocole extrait par Proxyman
+// PROXY CORS
+// On essaie plusieurs proxies publics dans l'ordre
+// Si l'un echoue, on passe au suivant automatiquement
 // ============================================================
-const BASE = 'https://www.premier-service.fr/5.11.04/ics.php';
-const CLUB = '57920076';
+const PROXIES = [
+  'https://corsproxy.io/?',
+  'https://api.allorigins.win/raw?url=',
+  'https://cors-anywhere.herokuapp.com/',
+];
+let proxyIdx = 0;
 
-// Courts reels identifies par Proxyman
+function proxyUrl(url) {
+  const p = PROXIES[proxyIdx];
+  if (p === 'https://corsproxy.io/?') return p + encodeURIComponent(url);
+  if (p === 'https://api.allorigins.win/raw?url=') return p + encodeURIComponent(url);
+  return p + url;
+}
+
+async function pfetch(url, opts={}) {
+  // Essayer d'abord sans proxy (meme domaine ou si cookies necessaires)
+  // Puis avec proxy si echec
+  let lastErr;
+  for (let i = 0; i < PROXIES.length; i++) {
+    proxyIdx = i;
+    try {
+      const purl = proxyUrl(url);
+      const headers = Object.assign({
+        'X-Requested-With': 'XMLHttpRequest',
+      }, opts.headers||{});
+      const r = await fetch(purl, Object.assign({}, opts, {
+        headers,
+        credentials: 'omit', // proxy ne peut pas transmettre les cookies
+      }));
+      if (r.ok || r.status < 500) {
+        log('Proxy OK: ' + PROXIES[i].split('/')[2], 'ld');
+        return r;
+      }
+    } catch(e) {
+      lastErr = e;
+      log('Proxy ' + PROXIES[i].split('/')[2] + ' echoue', 'lw');
+    }
+  }
+  throw lastErr || new Error('Tous les proxies ont echoue');
+}
+
+// ============================================================
+// NOTE IMPORTANTE SUR LES COOKIES :
+// Les proxies CORS ne transmettent pas les cookies de session.
+// On va donc passer les cookies manuellement dans les headers.
+// Apres le login, on recupere le PHPSESSID depuis la reponse
+// et on l'injecte dans toutes les requetes suivantes.
+// ============================================================
+let SESSION_COOKIE = '';
+
+async function pfetchWithSession(url, opts={}) {
+  const headers = Object.assign({}, opts.headers||{});
+  if (SESSION_COOKIE) headers['Cookie'] = SESSION_COOKIE;
+  return pfetch(url, Object.assign({}, opts, {headers}));
+}
+
+// ============================================================
+// CONFIG
+// ============================================================
+const BASE  = 'https://www.premier-service.fr/5.11.04/ics.php';
+const CLUB  = '57920076';
+const START = 'https://www.premier-service.fr/_start/index.php';
+
 const COURTS = [
   {id:27,n:7},{id:28,n:8},{id:29,n:9},
   {id:30,n:10},{id:31,n:11},{id:32,n:12}
 ];
 
-// Creneaux 1h (8h a 22h)
 const SLOTS_1H = ['08:00','09:00','10:00','11:00','12:00','13:00',
                   '14:00','15:00','16:00','17:00','18:00','19:00',
                   '20:00','21:00','22:00'];
@@ -362,16 +385,10 @@ const DAYS   = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
 const DAYSFR = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
 const MONTHS = ['Jan','Fev','Mar','Avr','Mai','Jun','Jul','Aou','Sep','Oct','Nov','Dec'];
 
-// ============================================================
-// STATE
-// ============================================================
 const S = {
-  connected: false,
-  courtStatus: {},   // id -> {free:bool, label:string, maint:bool}
-  slotStatus: {},    // 'HH:00' -> {free:bool, reason:string}
-  prio: [], partner: 0, slot: null,
-  armed: false, firing: false,
-  attempts: 0, success: false, iv: null
+  connected:false, courtStatus:{}, slotStatus:{},
+  prio:[], partner:0, slot:null,
+  armed:false, firing:false, attempts:0, success:false, iv:null
 };
 
 // ============================================================
@@ -382,7 +399,7 @@ function init() {
   document.getElementById('tdate').value = iso(d3);
   buildQD(); buildSlots(); buildCourts(); buildPartners();
   tick();
-  log('Pret. Etape 1 : cliquez Se connecter.','li');
+  log('Pret. Proxy CORS actif. Cliquez Se connecter.', 'li');
 }
 
 // ============================================================
@@ -429,7 +446,6 @@ function buildQD(){
       document.querySelectorAll('.qd').forEach(x=>x.classList.remove('on'));
       b.classList.add('on');
       document.getElementById('tdate').value=v;
-      // Reset connexion si date change
       if(S.connected) resetConn();
     };
     c.appendChild(b);
@@ -444,67 +460,61 @@ function onDateChange(){
 }
 
 function resetConn(){
-  S.connected=false;
-  S.courtStatus={};S.slotStatus={};S.prio=[];S.slot=null;
+  S.connected=false; S.courtStatus={}; S.slotStatus={}; S.prio=[]; S.slot=null;
+  SESSION_COOKIE='';
   document.getElementById('btnconn').className='btn-connect';
   document.getElementById('btnconn').textContent='SE CONNECTER ET CHARGER';
   document.getElementById('connstatus').classList.remove('show');
   lockCards(true);
-  setBtn('off','CONNECTEZ-VOUS D ABORD');
-  buildCourts();buildSlots();
+  setBtn('off','CONNECTEZ-VOUS D\'ABORD');
+  buildCourts(); buildSlots();
 }
 
 // ============================================================
-// STEP 1 : CONNEXION + CHARGEMENT GRILLE
+// ETAPE 1 : CONNEXION
 // ============================================================
 async function doConnect() {
-  const btn=document.getElementById('btnconn');
+  const btn = document.getElementById('btnconn');
   btn.className='btn-connect loading';
   btn.textContent='CONNEXION...';
   setDot('conn','Connexion en cours...');
-  log('Connexion a premier-service.fr...','li');
+  log('Connexion via proxy CORS...','li');
 
-  // 1. Login
-  const ok = await login(false);
+  const ok = await doLogin(false);
   if(!ok){
     btn.className='btn-connect';
     btn.textContent='REESSAYER';
-    setDot('','Echec connexion');
-    showConnStatus([{t:'err',m:'Connexion echouee. Verifiez login/mdp ou connexion internet.'}]);
+    setDot('','Echec - reessayez');
+    showConnStatus([{t:'err',m:'Connexion echouee. Verifiez login/mdp.'}]);
     log('Echec connexion.','ler');
     return;
   }
+
   log('Connecte ! Chargement grille...','lok');
   btn.textContent='CHARGEMENT GRILLE...';
 
-  // 2. Charger la grille pour la date cible
   const dv = document.getElementById('tdate').value;
   const gridOk = await loadGrid(dv);
 
-  // 3. Afficher resultats
   btn.className='btn-connect done';
   btn.textContent='CONNECTE ✓';
   S.connected=true;
-  setDot('ok','Connecte - grille chargee');
+  setDot('ok','Connecte');
   document.getElementById('s1').className='step done';
   lockCards(false);
-  buildSlots();buildCourts();
-  updateSum();
+  buildSlots(); buildCourts(); updateSum();
 
   const d=new Date(dv+'T12:00:00');
-  const msgs=[];
-  msgs.push({t:'ok',m:'Connecte en tant que '+document.getElementById('login').value});
-  msgs.push({t:'ok',m:'Grille du '+DAYS[d.getDay()]+' '+d.getDate()+' '+MONTHS[d.getMonth()]+(gridOk?' chargee':' - donnees partielles')});
-
-  // Compter courts disponibles
   const nFree=COURTS.filter(c=>S.courtStatus[c.id]?.free!==false&&!S.courtStatus[c.id]?.maint).length;
   const nBusy=COURTS.filter(c=>S.courtStatus[c.id]?.free===false).length;
   const nMaint=COURTS.filter(c=>S.courtStatus[c.id]?.maint).length;
-  msgs.push({t:nFree>0?'ok':'warn',m:nFree+' court(s) libre(s), '+nBusy+' pris, '+nMaint+' en maintenance'});
 
-  if(!gridOk) msgs.push({t:'warn',m:'Grille J+3 pas encore ouverte (normal avant 23h)'});
-  msgs.push({t:'ok',m:'Selectionnez creneau, terrain et armez !'});
-  showConnStatus(msgs);
+  showConnStatus([
+    {t:'ok', m:'Connecte: '+document.getElementById('login').value},
+    {t:'ok', m:'Grille du '+DAYS[d.getDay()]+' '+d.getDate()+' '+MONTHS[d.getMonth()]+(gridOk?' chargee':' - non encore ouverte')},
+    {t:nFree>0?'ok':'warn', m:nFree+' libre(s), '+nBusy+' pris, '+nMaint+' maintenance'},
+    {t:'ok', m:'Selectionnez creneau, terrain et armez !'},
+  ]);
 
   setBtn('','ARMER LE SNIPER');
   document.getElementById('btnfire').classList.remove('off');
@@ -523,89 +533,41 @@ function lockCards(locked){
     el.style.opacity=locked?'0.4':'1';
     el.style.pointerEvents=locked?'none':'auto';
   });
-  ['s2','s3','s4','s5'].forEach((id,i)=>{
+  ['s2','s3','s4','s5'].forEach(id=>{
     document.getElementById(id).className='step'+(locked?'':' active');
   });
 }
 
 // ============================================================
-// CHARGER LA GRILLE
+// CHARGER GRILLE
 // ============================================================
 async function loadGrid(dv){
   try{
     const ts=Date.now();
     const url=BASE+'?idact=328&idses=S0&CHAMP_SELECTEUR_JOUR='+encodeURIComponent(ddfr(dv)+' '+dayname(dv))+'&_='+ts;
-    const r=await fetch(url,{credentials:'include'});
+    const r=await pfetchWithSession(url);
     const txt=await r.text();
-    log('Grille recue ('+txt.length+' octets)','ld');
+    log('Grille: '+txt.length+' octets','ld');
     parseGrid(txt);
     return true;
   }catch(e){
-    log('Chargement grille: '+e.message.slice(0,50),'lw');
-    // Essayer aussi la page HTML principale
-    try{
-      const r2=await fetch(BASE,{credentials:'include'});
-      const txt2=await r2.text();
-      parseGrid(txt2);
-    }catch(e2){}
+    log('Grille indisponible (J+3 pas encore ouverte)','lw');
     return false;
   }
 }
 
-// ============================================================
-// PARSER LA GRILLE
-// Analyse le JS retourne par idact=328 pour extraire
-// l'etat de chaque creneau et terrain
-// ============================================================
 function parseGrid(txt){
-  // Reset
   S.slotStatus={};
   COURTS.forEach(c=>{S.courtStatus[c.id]={free:true,label:'',maint:false}});
+  const lteMap={1:27,2:28,3:29,4:30,5:31,6:32};
+  const courtSlotMap={};
 
-  // Format reponse idact=328 :
-  // $("#lte1 #ch_10_00").attr("title","...").addClass("hcreuse")
-  // lte1 = 1er terrain (Court 7 = id27), lte2 = Court 8, etc.
-  // ch_HH_MM = heure:minute
-
-  // Mapping lteN -> court id (ordre dans la grille, de haut en bas)
-  const lteMap = {1:27,2:28,3:29,4:30,5:31,6:32};
-
-  // 1. Parser les blocs de classes par terrain
-  // Pattern: $(\"#lteN #ch_HH_MM\").addClass(\"XXXXX\")
-  const blockRe = /\$\("#lte(\d+)[^"]*#ch_(\d{2})_(\d{2})[^)]+\)\.addClass\("([^"]+)"\)/g;
+  // Parser les selecteurs multi-terrains
+  const multiRe=/\$\("([^"]+)"\)[^;]*addClass\("([^"]+)"\)/g;
   let m;
-  const courtSlotMap = {}; // {courtIdx: {slot: class}}
-
-  while((m=blockRe.exec(txt))!==null){
-    const lte=parseInt(m[1]),hh=m[2],mm=m[3],cls=m[4];
-    const slot=hh+':'+mm;
-    if(!courtSlotMap[lte]) courtSlotMap[lte]={};
-    courtSlotMap[lte][slot]=cls;
-  }
-
-  // 2. Detecter maintenance depuis le HTML principal
-  // Pattern: texte "MAINTENANCE" associe a un court
-  const maintRe=/CLUB\s*-\s*(\d+)[^<]*<[^>]*>[^<]*MAINTENANCE/gi;
-  while((m=maintRe.exec(txt))!==null){
-    const courtNum=parseInt(m[1]);
-    const court=COURTS.find(c=>c.n===courtNum);
-    if(court) S.courtStatus[court.id].maint=true;
-  }
-
-  // 3. Parser les reservations existantes
-  // Pattern: idcrt=XX dans les blocs de reservation
-  // Les terrains non libres ont des blocs de texte (EDT CCC, HUGO, etc.)
-  // On cherche dans le titre: "title" attribute
-
-  // Chercher les terrains avec des titres de reservation pour notre slot
-  // Pattern complexe du JS: multiple selectors par ligne
-  // Ex: $("#lte1 #ch_10_00, #lte2 #ch_10_00").addClass("hcreuse")
-  const multiRe = /\$\("([^"]+)"\)[^;]+addClass\("([^"]+)"\)/g;
   while((m=multiRe.exec(txt))!==null){
-    const selector=m[1], cls=m[2];
-    // Extraire tous les lteN et slots
-    const parts=selector.split(',');
-    parts.forEach(part=>{
+    const sel=m[1],cls=m[2];
+    sel.split(',').forEach(part=>{
       const pm=part.trim().match(/#lte(\d+)[^#]*#ch_(\d{2})_(\d{2})/);
       if(pm){
         const lte=parseInt(pm[1]),slot=pm[2]+':'+pm[3];
@@ -615,51 +577,29 @@ function parseGrid(txt){
     });
   }
 
-  // 4. Detecter les terrains bloques par prof (EDT, cours particulier)
-  // Dans le HTML rendu, chercher les blocs verts qui indiquent reservation
-  // Le JS contient des ajouts de classes "mpleine" (milieu pleine) qui indiquent occupation
+  // Detecter maintenance
+  const maintRe=/CLUB\s*-\s*(\d+)[^<]*(?:<[^>]*>)*[^<]*MAINTENANCE/gi;
+  while((m=maintRe.exec(txt))!==null){
+    const n=parseInt(m[1]);
+    const c=COURTS.find(x=>x.n===n);
+    if(c) S.courtStatus[c.id].maint=true;
+  }
 
-  // 5. Agregation: pour chaque creneau 1h, verifier si libre sur chaque terrain
+  // Agregation par creneau
   SLOTS_1H.forEach(slot=>{
-    let someBlocked=0, someFree=0;
+    let blocked=0,free=0;
     COURTS.forEach(c=>{
-      const lte=Object.keys(lteMap).find(k=>lteMap[k]===c.id);
+      const lte=Object.keys(lteMap).find(k=>parseInt(lteMap[k])===c.id);
       if(!lte) return;
-      const slotCls=(courtSlotMap[lte]||{})[slot]||'';
-      // Classes indiquant occupation: mpleine, fpleine (prof), hpleine
-      const blocked=/mpleine|fpleine/.test(slotCls);
-      if(blocked) someBlocked++;
-      else someFree++;
+      const cls=(courtSlotMap[parseInt(lte)]||{})[slot]||'';
+      /mpleine|fpleine/.test(cls) ? blocked++ : free++;
     });
-    S.slotStatus[slot]={
-      free: someFree>0,
-      allBlocked: someFree===0,
-      partial: someBlocked>0&&someFree>0
-    };
+    S.slotStatus[slot]={free:free>0,allBlocked:free===0,partial:blocked>0&&free>0};
   });
-
-  // 6. Pour chaque terrain, verifier si bloque sur le creneau selectionne
-  // (sera reevalue quand l'utilisateur choisit un creneau)
-
-  log('Grille analysee: '+Object.keys(courtSlotMap).length+' terrains','ld');
-}
-
-// Recalculer l'etat des courts pour le creneau choisi
-function updateCourtStatusForSlot(slot){
-  if(!slot) return;
-  const lteMap={1:27,2:28,3:29,4:30,5:31,6:32};
-  COURTS.forEach(c=>{
-    if(S.courtStatus[c.id].maint) return;
-    S.courtStatus[c.id].free=true;
-    S.courtStatus[c.id].label='';
-  });
-
-  // Re-parser depuis le texte stocke si besoin
-  // Pour l'instant on se base sur les infos deja parsees
 }
 
 // ============================================================
-// BUILD SLOTS
+// SLOTS
 // ============================================================
 function buildSlots(){
   const g=document.getElementById('slotsgrid');
@@ -667,17 +607,13 @@ function buildSlots(){
   SLOTS_1H.forEach(t=>{
     const st=S.slotStatus[t]||{free:true};
     const b=document.createElement('button');
-    b.className='sl'+(t===S.slot?' on':'')+(!S.connected?'':st.allBlocked?' blocked':st.partial?' partial':'');
-    b.innerHTML=t.slice(0,5);
-    if(S.connected&&st.allBlocked){
-      b.title='Tous terrains pris';
-    }
+    b.className='sl'+(t===S.slot?' on':'')+(S.connected&&st.allBlocked?' blocked':S.connected&&st.partial?' partial':'');
+    b.textContent=t.slice(0,5);
     b.onclick=()=>{
-      if(b.classList.contains('blocked')&&!b.classList.contains('on')) return;
+      if(b.classList.contains('blocked')) return;
       document.querySelectorAll('.sl').forEach(x=>x.classList.remove('on'));
       b.classList.add('on');
       S.slot=t;
-      updateCourtStatusForSlot(t);
       buildCourts();
       updateSum();
     };
@@ -686,44 +622,31 @@ function buildSlots(){
 }
 
 // ============================================================
-// BUILD COURTS
+// COURTS
 // ============================================================
 function buildCourts(){
   const g=document.getElementById('courtsgrid');
   g.innerHTML='';
   const msg=document.getElementById('gridmsg');
-
-  if(!S.connected){
-    msg.style.display='block';
-    msg.textContent='Connectez-vous pour voir les disponibilites.';
-    return;
-  }
-  if(!S.slot){
-    msg.style.display='block';
-    msg.textContent='Selectionnez d abord un creneau.';
-    return;
-  }
+  if(!S.connected){msg.style.display='block';msg.textContent='Connectez-vous d\'abord.';return;}
+  if(!S.slot){msg.style.display='block';msg.textContent='Selectionnez un creneau d\'abord.';return;}
   msg.style.display='none';
-
   COURTS.forEach(c=>{
-    const st=S.courtStatus[c.id]||{free:true,maint:false,label:''};
+    const st=S.courtStatus[c.id]||{free:true,maint:false};
     const pi=S.prio.indexOf(c.id);
-    const el=document.createElement('div');
     let cls='ct';
     if(st.maint) cls+=' maint';
     else if(!st.free) cls+=' na';
     else if(pi===0) cls+=' p1';
     else if(pi>0) cls+=' p2';
+    const el=document.createElement('div');
     el.className=cls;
-
     let badge='';
     if(st.maint) badge='<span class="ct-badge bm">MAINT</span>';
     else if(!st.free) badge='<span class="ct-badge bna">PRIS</span>';
     else if(pi===0) badge='<span class="ct-badge bp1">P1</span>';
     else if(pi>0) badge='<span class="ct-badge bp2">P'+(pi+1)+'</span>';
-
-    const sublabel=st.label||'Court';
-    el.innerHTML=badge+'<div class="ct-n">'+c.n+'</div><div class="ct-sub">'+sublabel+'</div>';
+    el.innerHTML=badge+'<div class="ct-n">'+c.n+'</div><div class="ct-sub">'+(st.label||'Court')+'</div>';
     if(!st.maint&&st.free) el.onclick=()=>cycleCourt(c.id);
     g.appendChild(el);
   });
@@ -734,7 +657,7 @@ function cycleCourt(id){
   if(i===-1) S.prio=[id,...S.prio];
   else if(i===0&&S.prio.length>1) S.prio=[...S.prio.slice(1),id];
   else S.prio=S.prio.filter(x=>x!==id);
-  buildCourts();updateSum();
+  buildCourts(); updateSum();
 }
 
 // ============================================================
@@ -761,11 +684,9 @@ function updateSum(){
   const d=new Date(dv+'T12:00:00');
   const ds=DAYS[d.getDay()]+' '+d.getDate()+' '+MONTHS[d.getMonth()]+' '+d.getFullYear();
   const ft=document.getElementById('firetime').value||'23:00';
-  const rps=document.getElementById('brate').value;
-  const dur=document.getElementById('bdur').value;
+  const nextH=p2(parseInt(S.slot)+1);
   const courts=S.prio.length?S.prio.map((id,i)=>'<b>Court '+(COURTS.find(c=>c.id===id)?.n||id)+'</b>'+(i===0?' P1':' P2')).join(' / '):'<span style="color:var(--muted)">1er libre</span>';
-  const pt='<b>'+PARTNERS[S.partner].name+'</b>';
-  box.innerHTML='<b>'+ds+'</b><span class="sep">|</span><b>'+S.slot+'-'+p2(parseInt(S.slot)+1)+'h</b><span class="sep">|</span>'+courts+'<br>'+pt+'<span class="sep">|</span>Tir a <b>'+ft+'</b><span class="sep">|</span><b>'+rps+' req/s</b> x <b>'+dur+'s</b>';
+  box.innerHTML='<b>'+ds+'</b><span class="sep">|</span><b>'+S.slot+'-'+nextH+'h</b><span class="sep">|</span>'+courts+'<br><b>'+PARTNERS[S.partner].name+'</b><span class="sep">|</span>Tir <b>'+ft+'</b><span class="sep">|</span><b>'+document.getElementById('brate').value+' req/s</b>';
   box.classList.add('on');
 }
 
@@ -774,24 +695,24 @@ function updateSum(){
 // ============================================================
 function armOrFire(){
   if(S.firing) return;
-  if(!S.connected){log('Connectez-vous d abord (etape 1).','lw');return;}
+  if(!S.connected){log('Connectez-vous d\'abord.','lw');return;}
   if(!S.slot){log('Selectionnez un creneau.','lw');return;}
-  if(!document.getElementById('tdate').value){log('Choisissez une date.','lw');return;}
   if(S.armed){startFire();return;}
-  S.armed=true;S.attempts=0;S.success=false;
+  S.armed=true; S.attempts=0; S.success=false;
   const ft=document.getElementById('firetime').value||'23:00';
   setBtn('armed','ARME - TIR A '+ft);
   document.getElementById('btndis').classList.add('on');
-  const sa=document.getElementById('sbatt');sa.style.display='flex';document.getElementById('attn').textContent='0';
-  setDot('armed','Arme - declenchement a '+ft+':00');
+  const sa=document.getElementById('sbatt');sa.style.display='flex';
+  document.getElementById('attn').textContent='0';
+  setDot('armed','Arme - '+ft+':00');
   const d=new Date(document.getElementById('tdate').value+'T12:00:00');
-  log('Arme - '+DAYS[d.getDay()]+' '+d.getDate()+' '+MONTHS[d.getMonth()]+' a '+S.slot,'lw');
-  S.prio.length&&log('Priorite: '+S.prio.map(id=>'Court '+(COURTS.find(c=>c.id===id)?.n||id)).join(' > '),'li');
+  log('Arme - '+DAYS[d.getDay()]+' '+d.getDate()+' a '+S.slot,'lw');
+  S.prio.length&&log('Courts: '+S.prio.map(id=>'C'+(COURTS.find(c=>c.id===id)?.n||id)).join('>'), 'li');
   log('Partenaire: '+PARTNERS[S.partner].name,'li');
 }
 
 function disarm(){
-  clearInterval(S.iv);S.armed=false;S.firing=false;
+  clearInterval(S.iv); S.armed=false; S.firing=false;
   setBtn('','ARMER LE SNIPER');
   document.getElementById('btndis').classList.remove('on');
   setDot('ok','Desarme');
@@ -806,12 +727,11 @@ async function startFire(){
   S.firing=true;
   setBtn('firing','FEU EN COURS...');
   setDot('firing','Rafale active');
-  log('DECLENCHEMENT - Re-login avant rafale...','lw');
+  log('DECLENCHEMENT - Re-login...','lw');
 
-  // Re-login frais juste avant le tir
-  const ok=await login(true);
+  const ok=await doLogin(true);
   if(!ok){log('Echec re-login.','ler');endFire(false);return;}
-  log('Re-connecte ! Rafale demarree.','lok');
+  log('Connecte ! Rafale...','lok');
 
   const rps=parseInt(document.getElementById('brate').value);
   const dur=parseInt(document.getElementById('bdur').value)*1000;
@@ -819,9 +739,8 @@ async function startFire(){
   const ivl=Math.max(50,Math.floor(1000/rps));
   const t0=Date.now();
   let ap=[...S.prio];
-  // Si pas de prio, prendre tous les courts libres
-  if(ap.length===0) ap=COURTS.filter(c=>S.courtStatus[c.id]?.free!==false&&!S.courtStatus[c.id]?.maint).map(c=>c.id);
-  if(ap.length===0) ap=COURTS.map(c=>c.id);
+  if(!ap.length) ap=COURTS.filter(c=>S.courtStatus[c.id]?.free!==false&&!S.courtStatus[c.id]?.maint).map(c=>c.id);
+  if(!ap.length) ap=COURTS.map(c=>c.id);
 
   S.iv=setInterval(async()=>{
     if(S.success&&stop){endFire(true);return;}
@@ -832,34 +751,67 @@ async function startFire(){
     const r=await sendResa(cid);
     if(r.ok){
       S.success=true;
-      log('RESERVE ! Court '+(COURTS.find(c=>c.id===cid)?.n||cid)+' - tentative #'+S.attempts,'lok');
+      log('RESERVE ! Court '+(COURTS.find(c=>c.id===cid)?.n)+'  #'+S.attempts,'lok');
       if(PARTNERS[S.partner].val) await confPartner();
       await confFinal();
       if(stop) endFire(true);
     } else {
-      if(r.pris&&ap.length>1){log('Court '+(COURTS.find(c=>c.id===ap[0])?.n||ap[0])+' pris > rotation','lw');ap.shift();}
+      if(r.pris&&ap.length>1){
+        log('Court '+(COURTS.find(c=>c.id===ap[0])?.n)+' pris > rotation','lw');
+        ap.shift();
+      }
       if(S.attempts<=5||S.attempts%25===0) log('#'+S.attempts+' '+r.err,'ler');
     }
   },ivl);
 }
 
 function endFire(ok){
-  clearInterval(S.iv);S.firing=false;S.armed=false;
+  clearInterval(S.iv); S.firing=false; S.armed=false;
   document.getElementById('btndis').classList.remove('on');
-  if(ok){setBtn('ok','RESERVE ! '+S.attempts+' tentative(s)');setDot('ok','Confirme ('+S.attempts+' tentatives)');}
-  else{setBtn('','ARMER LE SNIPER');setDot(S.connected?'ok':'','Termine - '+(S.success?'OK':S.attempts+' tentatives'));if(!S.success)log('Echec apres '+S.attempts+' tentatives.','ler');}
+  if(ok){
+    setBtn('ok','RESERVE ! '+S.attempts+' tentative(s)');
+    setDot('ok','Confirme ('+S.attempts+')');
+  } else {
+    setBtn('','ARMER LE SNIPER');
+    setDot('ok', S.success?'Reserve':'Echec '+S.attempts+' tentatives');
+    if(!S.success) log('Echec apres '+S.attempts+' tentatives.','ler');
+  }
 }
 
 // ============================================================
-// HTTP
+// LOGIN via proxy CORS
+// Gestion manuelle du cookie de session (PHPSESSID)
 // ============================================================
-async function login(silent){
+async function doLogin(silent){
   const lg=document.getElementById('login').value.trim();
   const pw=document.getElementById('pwd').value.trim();
-  try{
-    await fetch('https://www.premier-service.fr/_start/index.php?club='+CLUB,{credentials:'include'});
-    await fetch(BASE,{method:'POST',credentials:'include',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'club='+CLUB});
-    const page=await(await fetch(BASE,{credentials:'include'})).text();
+  try {
+    // 1. Init session club
+    const r1=await pfetch(START+'?club='+CLUB);
+    // Recuperer cookie depuis headers si disponible
+    const setCookie=r1.headers.get('set-cookie')||'';
+    const sessMatch=setCookie.match(/PHPSESSID=([^;]+)/);
+    if(sessMatch) SESSION_COOKIE='PHPSESSID='+sessMatch[1];
+
+    // 2. POST club
+    await pfetchWithSession(BASE, {
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:'club='+CLUB
+    });
+
+    // 3. GET page login
+    const r3=await pfetchWithSession(BASE);
+    const page=await r3.text();
+
+    // Recuperer cookie si pas encore
+    if(!SESSION_COOKIE){
+      const sc2=r3.headers.get('set-cookie')||'';
+      const sm2=sc2.match(/PHPSESSID=([^;]+)/);
+      if(sm2) SESSION_COOKIE='PHPSESSID='+sm2[1];
+    }
+
+    // Extraire champs obfusques
     const excl=new Set(['idact','idpge','idses','usermd5','idgfcmiid','largeur_ecran','hauteur_ecran','pingmax','pingmin','userid','userkey']);
     const fields=[...page.matchAll(/name="([a-z]{14,24})"/gi)].map(m=>m[1]).filter(f=>!excl.has(f));
     const hf=fields[0]||'msefyrseikuavettedia';
@@ -867,16 +819,40 @@ async function login(silent){
     const pf=fields[2]||'fyksnurseouetjar';
     const hash=md5(pw.toUpperCase()+lg.toUpperCase());
     const idpge=(page.match(/name="idpge"\s+value="([^"]+)"/)||['','101-'+Date.now()])[1];
+
+    if(!silent) log('Hash: '+hash.slice(0,8)+'... Champs: '+hf.slice(0,6)+'...','ld');
+
     const body='idact=101&idpge='+idpge+'&usermd5=&'+hf+'='+hash+'&idgfcmiid=0&largeur_ecran=390&hauteur_ecran=844&pingmax=16&pingmin=16&userid=&userkey=&'+lf+'='+encodeURIComponent(lg)+'&'+pf+'=';
-    const r=await fetch(BASE,{method:'POST',credentials:'include',headers:{'Content-Type':'application/x-www-form-urlencoded'},body});
-    const txt=await r.text();
-    return txt.includes('idact=328')||txt.includes('CHAMP_SELECTEUR')||txt.includes('reservation')||(!txt.includes('mot de passe')&&txt.length>500);
-  }catch(e){
-    if(!silent)log('Erreur login: '+e.message.slice(0,60),'ler');
+
+    const r4=await pfetchWithSession(BASE, {
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body
+    });
+    const txt=await r4.text();
+
+    // Recuperer nouveau cookie apres login
+    const sc4=r4.headers.get('set-cookie')||'';
+    const sm4=sc4.match(/PHPSESSID=([^;]+)/);
+    if(sm4) SESSION_COOKIE='PHPSESSID='+sm4[1];
+
+    if(SESSION_COOKIE&&!silent) log('Session: '+SESSION_COOKIE.slice(0,20)+'...','ld');
+
+    const ok=txt.includes('idact=328')||txt.includes('CHAMP_SELECTEUR')||
+              txt.includes('reservation')||(!txt.includes('mot de passe')&&txt.length>500);
+
+    if(!silent&&ok) log('Login reussi !','lok');
+    if(!silent&&!ok) log('Reponse inattendue ('+txt.length+' octets)','lw');
+    return ok;
+  } catch(e){
+    if(!silent) log('Erreur: '+e.message.slice(0,60),'ler');
     return false;
   }
 }
 
+// ============================================================
+// RESERVATION
+// ============================================================
 async function sendResa(cid){
   try{
     const dv=document.getElementById('tdate').value;
@@ -884,10 +860,16 @@ async function sendResa(cid){
     const[h,m]=S.slot.split(':').map(Number);
     const sc=h*2+(m>=30?1:0);
     const rand=Math.floor(Math.random()*99999999999999);
-    // pw=60 pour 1 heure (confirme: pw=30 = 30min, pw=60 = 1h)
-    const body='idact=336&idpge=210-'+rand+'&IDOBJ='+sc+'_0_'+cid+'&idses=S0&idcrt='+cid+'&idpro=&idpar='+(PARTNERS[S.partner].val?PARTNERS[S.partner].val.replace('-',''):'')+
-      '&pw=60&dj=2&userid=&usermd5=&club=&B_MOJJO=0&LISTE_RESA_BOURSE_DATE_JEU=&LISTE_RESA_BOURSE_HEURE_JEU=&LISTE_RESA_BOURSE_COURT_JEU=&CHAMP_SELECTEUR_JEU=1&ID_TABLEAU=1%7C'+CLUB+'%7C1&CHAMP_SELECTEUR_JOUR='+cj+'&nc=60';
-    const r=await fetch(BASE,{method:'POST',credentials:'include',headers:{'Content-Type':'application/x-www-form-urlencoded'},body});
+    const idpar=PARTNERS[S.partner].val?PARTNERS[S.partner].val.replace('-',''):'';
+    const body='idact=336&idpge=210-'+rand+'&IDOBJ='+sc+'_0_'+cid+'&idses=S0&idcrt='+cid+
+      '&idpro=&idpar='+idpar+'&pw=60&dj=2&userid=&usermd5=&club=&B_MOJJO=0'+
+      '&LISTE_RESA_BOURSE_DATE_JEU=&LISTE_RESA_BOURSE_HEURE_JEU=&LISTE_RESA_BOURSE_COURT_JEU='+
+      '&CHAMP_SELECTEUR_JEU=1&ID_TABLEAU=1%7C'+CLUB+'%7C1&CHAMP_SELECTEUR_JOUR='+cj+'&nc=60';
+    const r=await pfetchWithSession(BASE,{
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body
+    });
     const txt=await r.text();
     if(/confirm|valid|succes/i.test(txt)||txt.includes('idact=332')||txt.includes('partenaire')) return{ok:true};
     if(/indisponible|occup|pris|taken/i.test(txt)) return{ok:false,pris:true,err:'Court pris'};
@@ -899,12 +881,20 @@ async function confPartner(){
   const p=PARTNERS[S.partner];if(!p.val)return;
   const v=p.val.replace('-','');
   const rand=Math.floor(Math.random()*99999999999999);
-  await fetch(BASE,{method:'POST',credentials:'include',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'idact=332&idpge=330-'+rand+'&IDOBJ='+v+'&IDREF=&idtpa=&idpar='+v+'&rcout=&b_i=0&idses=S0&CHAMP_TYPE_1='+p.val}).catch(()=>{});
+  await pfetchWithSession(BASE,{
+    method:'POST',
+    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:'idact=332&idpge=330-'+rand+'&IDOBJ='+v+'&IDREF=&idtpa=&idpar='+v+'&rcout=&b_i=0&idses=S0&CHAMP_TYPE_1='+p.val
+  }).catch(()=>{});
 }
 
 async function confFinal(){
   const rand=Math.floor(Math.random()*99999999999999);
-  await fetch(BASE,{method:'POST',credentials:'include',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'idact=366&idpge=330-'+rand+'&IDOBJ=&IDREF=&idtpa=&idpar=&rcout=&b_i=0&idses=S0'}).catch(()=>{});
+  await pfetchWithSession(BASE,{
+    method:'POST',
+    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:'idact=366&idpge=330-'+rand+'&IDOBJ=&IDREF=&idtpa=&idpar=&rcout=&b_i=0&idses=S0'
+  }).catch(()=>{});
 }
 
 // ============================================================
@@ -930,8 +920,7 @@ function log(msg,type){
 function p2(n){return String(n).padStart(2,'0')}
 
 // ============================================================
-// MD5 PURE JS
-// Verifie: MD5("K@SJMXRM+Q9TOLVIDE") = ac43d1bea80c8ce2822dc23d5d32076c
+// MD5 - verifie: MD5("K@SJMXRM+Q9TOLVIDE") = ac43d1bea80c8ce2822dc23d5d32076c
 // ============================================================
 function md5(s){
   function sa(x,y){var l=(x&65535)+(y&65535);return((x>>16)+(y>>16)+(l>>16)<<16)|(l&65535)}
