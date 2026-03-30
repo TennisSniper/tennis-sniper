@@ -201,6 +201,7 @@ display:flex;justify-content:space-between;align-items:center}
 <div class="hdr">
   <div class="logo">SNIPER</div>
   <div class="tagline">Tennis &middot; Club Borotra &middot; Courbevoie</div>
+  <div style="font-size:9px;color:var(--muted2);margin-top:4px;letter-spacing:1px">v8.1 &mdash; tennissniper.github.io</div>
 </div>
 
 <div class="clkbar">
@@ -387,26 +388,52 @@ function openSite(){
 async function confirmAndLoad(){
   const btn=document.getElementById('btnConfirm');
   btn.textContent='CHARGEMENT...';btn.style.opacity='.6';btn.style.pointerEvents='none';
-  setDot('conn','Chargement des grilles...');
-  log('Chargement des 4 grilles...','li');
+  setDot('conn','Test de connexion...');
+  log('--- Diagnostic connexion ---','li');
 
-  // Test de session: essayer de charger la grille
-  // Si l'utilisateur est connecte sur premier-service.fr dans Chrome,
-  // les cookies sont partages car meme navigateur
-  const results=await Promise.allSettled([loadGrid(0),loadGrid(1),loadGrid(2),loadGrid(3)]);
+  // ETAPE 1: Test simple fetch vers premier-service.fr
+  log('Test 1: fetch GET ics.php...','ld');
+  let testOk=false;
+  let testTxt='';
+  try{
+    const r=await fetch(BASE,{credentials:'include',mode:'cors'});
+    testTxt=await r.text();
+    log('Test 1 OK: HTTP '+r.status+' - '+testTxt.length+' octets','lok');
+    testOk=true;
+  }catch(e){
+    log('Test 1 ECHEC: '+e.message,'ler');
+    // Essai sans credentials
+    try{
+      const r2=await fetch(BASE,{credentials:'omit',mode:'no-cors'});
+      log('Test 1b (no-cors): type='+r2.type+' status='+r2.status,'lw');
+    }catch(e2){
+      log('Test 1b ECHEC: '+e2.message,'ler');
+    }
+  }
 
-  // Verifier si au moins une grille a charge (signe que la session est active)
-  const anyLoaded=results.some(r=>r.status==='fulfilled'&&r.value===true);
-
-  if(!anyLoaded){
-    // Aucune grille chargee = probablement pas connecte
-    btn.textContent='CONNEXION ETABLIE - CHARGER';
-    btn.style.opacity='1';btn.style.pointerEvents='auto';
-    log('Grilles vides - etes-vous bien connecte sur premier-service.fr ?','lw');
-    log('Retournez sur l\'onglet premier-service.fr, connectez-vous, puis revenez ici.','lw');
-    setDot('','Non connecte ?');
+  if(!testOk){
+    log('CORS bloque - le navigateur refuse les requetes cross-origin.','ler');
+    log('Solution: sur premier-service.fr, restez connecte et ne fermez pas l\'onglet.','lw');
+    log('Puis reessayez "Connexion etablie".','lw');
+    btn.textContent='REESSAYER';btn.style.opacity='1';btn.style.pointerEvents='auto';
+    setDot('','CORS bloque - voir journal');
     return;
   }
+
+  // ETAPE 2: Verifier si connecte (la page doit contenir CHAMP_SELECTEUR ou idact=328)
+  const isLoggedIn=testTxt.includes('CHAMP_SELECTEUR')||testTxt.includes('idact=328')||testTxt.includes('reservation');
+  if(!isLoggedIn){
+    log('Fetch OK mais non connecte (page de login retournee)','lw');
+    log('Reconnectez-vous sur l\'onglet premier-service.fr puis reessayez.','lw');
+    btn.textContent='REESSAYER';btn.style.opacity='1';btn.style.pointerEvents='auto';
+    setDot('','Non connecte - voir journal');
+    return;
+  }
+  log('Session active confirmee !','lok');
+
+  // ETAPE 3: Charger les 4 grilles
+  log('Chargement des 4 grilles...','li');
+  const results=await Promise.allSettled([loadGrid(0),loadGrid(1),loadGrid(2),loadGrid(3)]);
 
   S.connected=true;
   btn.textContent='CONNECTE ✓';
@@ -425,7 +452,7 @@ async function confirmAndLoad(){
     const nF=COURTS.filter(c=>grid?.courtStatus[c.id]?.free!==false&&!grid?.courtStatus[c.id]?.maint).length;
     log(label+': '+nF+'/6 libres',nF>0?'lok':'lw');
   });
-  log('Pret ! Choisissez un onglet, creneau et terrain.','lok');
+  log('Pret ! Choisissez onglet, creneau et terrain.','lok');
 }
 
 // ============================================================
