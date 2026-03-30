@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -21,156 +20,199 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;min-height:100%}
-.wrap{max-width:460px;margin:0 auto;padding:18px 13px 90px}
+.wrap{max-width:460px;margin:0 auto;padding:16px 13px 100px}
 
-.hdr{text-align:center;padding:8px 0 20px}
-.logo{font-family:‘Bebas Neue’,sans-serif;font-size:54px;letter-spacing:8px;line-height:1;
-background:linear-gradient(135deg,var(–green),#00c2ff);
--webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.tagline{font-size:9px;letter-spacing:3px;color:var(–muted);text-transform:uppercase;margin-top:3px}
+/* HEADER */
+.hdr{text-align:center;padding:6px 0 16px}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:50px;letter-spacing:8px;line-height:1;
+  background:linear-gradient(135deg,var(--green),#00c2ff);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.tagline{font-size:9px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-top:3px}
 
-.clkbar{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;margin-bottom:11px}
-.clkbox{background:var(–card);border:1px solid var(–line);border-radius:13px;padding:11px 9px;text-align:center}
-.clknum{font-family:‘Bebas Neue’,sans-serif;font-size:30px;letter-spacing:2px;line-height:1}
-.clkms{font-size:11px;color:var(–muted)}
-.clklbl{font-size:8px;letter-spacing:2px;color:var(–muted);text-transform:uppercase;margin-top:2px}
-.cdbox{background:var(–card);border:1px solid var(–amber);border-radius:13px;padding:11px 13px;text-align:center;min-width:115px}
-.cdnum{font-family:‘Bebas Neue’,sans-serif;font-size:26px;letter-spacing:2px;color:var(–amber);line-height:1}
-.cdnum.hot{color:var(–red);animation:fl .3s infinite alternate}
+/* CLOCK */
+.clkbar{display:grid;grid-template-columns:1fr auto 1fr;gap:7px;margin-bottom:10px}
+.clkbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 8px;text-align:center}
+.clknum{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;line-height:1}
+.clkms{font-size:10px;color:var(--muted)}
+.clklbl{font-size:8px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-top:2px}
+.cdbox{background:var(--card);border:1px solid var(--amber);border-radius:12px;padding:10px 12px;text-align:center;min-width:110px}
+.cdnum{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;color:var(--amber);line-height:1}
+.cdnum.hot{color:var(--red);animation:fl .3s infinite alternate}
 @keyframes fl{to{opacity:.15}}
 
-.sb{background:var(–card);border:1px solid var(–line);border-radius:10px;
-padding:9px 13px;margin-bottom:10px;display:flex;align-items:center;gap:9px;font-size:11px}
-.dot{width:7px;height:7px;border-radius:50%;background:var(–muted2);flex-shrink:0}
-.dot.conn{background:var(–blue);animation:pu .8s infinite}
-.dot.ok{background:var(–green)}
-.dot.armed{background:var(–amber);animation:pu 1s infinite}
-.dot.firing{background:var(–red);animation:pu .12s infinite}
+/* STATUS */
+.sb{background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:8px 12px;margin-bottom:10px;display:flex;align-items:center;gap:8px;font-size:11px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--muted2);flex-shrink:0}
+.dot.conn{background:var(--blue);animation:pu .8s infinite}
+.dot.ok{background:var(--green)}
+.dot.armed{background:var(--amber);animation:pu 1s infinite}
+.dot.firing{background:var(--red);animation:pu .12s infinite}
 @keyframes pu{50%{opacity:.1}}
-.sbmsg{flex:1;color:var(–muted)}
-.sbatt{font-family:‘Bebas Neue’,sans-serif;font-size:17px;display:none}
-.sbatt b{color:var(–green)}
+.sbmsg{flex:1;color:var(--muted);font-size:10px}
+.sbatt{font-family:'Bebas Neue',sans-serif;font-size:16px;display:none}
+.sbatt b{color:var(--green)}
 
-.card{background:var(–card);border:1px solid var(–line);border-radius:15px;padding:14px;margin-bottom:10px}
-.ctitle{font-size:9px;letter-spacing:3px;color:var(–muted);text-transform:uppercase;
-margin-bottom:12px;display:flex;align-items:center;gap:7px}
-.ctitle::after{content:’’;flex:1;height:1px;background:var(–line)}
-.step{display:inline-flex;align-items:center;justify-content:center;
-width:20px;height:20px;border-radius:50%;border:1px solid var(–muted);
-font-size:10px;color:var(–muted);flex-shrink:0;margin-right:2px}
-.step.done{border-color:var(–green);color:var(–green);background:var(–gbg)}
-.step.active{border-color:var(–amber);color:var(–amber);background:var(–abg)}
+/* CARD */
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px;margin-bottom:9px}
+.ctitle{font-size:9px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;
+  margin-bottom:11px;display:flex;align-items:center;gap:7px}
+.ctitle::after{content:'';flex:1;height:1px;background:var(--line)}
 
-.field{margin-bottom:9px}
-.field label{display:block;font-size:9px;color:var(–muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
-.field input,.field select{width:100%;background:var(–card2);border:1px solid var(–line);border-radius:8px;
-color:var(–text);font-family:‘DM Mono’,monospace;font-size:13px;padding:9px 11px;
-outline:none;-webkit-appearance:none;appearance:none}
-.field input:focus,.field select:focus{border-color:var(–green)}
-.field input[type=date],.field input[type=time]{color-scheme:dark}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+/* FIELDS */
+.field{margin-bottom:8px}
+.field label{display:block;font-size:9px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.field input,.field select{width:100%;background:var(--card2);border:1px solid var(--line);border-radius:8px;
+  color:var(--text);font-family:'DM Mono',monospace;font-size:13px;padding:9px 11px;
+  outline:none;-webkit-appearance:none;appearance:none}
+.field input:focus,.field select:focus{border-color:var(--green)}
+.field input[type=time]{color-scheme:dark}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 
-.btn-connect{width:100%;padding:13px;border-radius:10px;font-family:‘Bebas Neue’,sans-serif;
-font-size:20px;letter-spacing:3px;cursor:pointer;transition:all .2s;
-border:2px solid var(–blue);background:var(–bbg);color:var(–blue)}
-.btn-connect:active{background:var(–blue);color:#000}
-.btn-connect.loading{border-color:var(–amber);color:var(–amber);animation:pu .6s infinite}
-.btn-connect.done{border-color:var(–green);background:var(–gbg);color:var(–green)}
-
-.conn-status{margin-top:9px;padding:10px 12px;background:var(–card2);border-radius:8px;
-font-size:10px;color:var(–muted);line-height:1.8;display:none}
+/* CONNECT BTN */
+.btn-connect{width:100%;padding:12px;border-radius:10px;font-family:'Bebas Neue',sans-serif;
+  font-size:19px;letter-spacing:3px;cursor:pointer;transition:all .2s;
+  border:2px solid var(--blue);background:var(--bbg);color:var(--blue);margin-top:11px}
+.btn-connect:active{background:var(--blue);color:#000}
+.btn-connect.loading{border-color:var(--amber);color:var(--amber);animation:pu .6s infinite}
+.btn-connect.done{border-color:var(--green);background:var(--gbg);color:var(--green)}
+.conn-status{margin-top:8px;padding:9px 11px;background:var(--card2);border-radius:8px;
+  font-size:10px;color:var(--muted);line-height:1.8;display:none}
 .conn-status.show{display:block}
-.conn-ok{color:var(–green)}.conn-warn{color:var(–amber)}.conn-err{color:var(–red)}
+.conn-ok{color:var(--green)}.conn-warn{color:var(--amber)}.conn-err{color:var(--red)}
 
-.qdrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.qd{padding:6px 9px;background:var(–card2);border:1px solid var(–line);border-radius:7px;
-font-size:10px;color:var(–muted);cursor:pointer;white-space:nowrap;transition:all .15s}
-.qd.on{background:var(–gbg);border-color:var(–green);color:var(–green)}
+/* ── DATE TABS ── */
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:10px}
+.tab{background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:8px 4px;text-align:center;cursor:pointer;transition:all .15s;position:relative}
+.tab:active{transform:scale(.96)}
+.tab-label{font-size:8px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
+.tab-day{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:var(--text);margin-top:1px}
+.tab-date{font-size:9px;color:var(--muted);margin-top:1px}
+.tab-badge{position:absolute;top:4px;right:5px;font-size:7px;font-weight:700;
+  padding:1px 4px;border-radius:3px;letter-spacing:.5px}
+.tb-open{background:rgba(13,255,140,.25);color:var(--green)}
+.tb-snipe{background:rgba(255,204,0,.25);color:var(--amber)}
 
-.slots1h{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:9px}
-.sl{padding:8px 3px;background:var(–card2);border:1px solid var(–line);border-radius:7px;
-color:var(–muted);font-size:11px;cursor:pointer;text-align:center;transition:all .12s}
-.sl.on{background:var(–gbg);border-color:var(–green);color:var(–green);font-weight:500}
-.sl.blocked{opacity:.3;cursor:not-allowed;background:var(–rbg);border-color:var(–red)}
-.sl.partial{border-color:var(–amber);color:var(–amber)}
+/* Tab selected states */
+.tab.sel-open{background:var(--gbg);border-color:var(--green)}
+.tab.sel-open .tab-label,.tab.sel-open .tab-day,.tab.sel-open .tab-date{color:var(--green)}
+.tab.sel-snipe{background:var(--abg);border-color:var(--amber)}
+.tab.sel-snipe .tab-label,.tab.sel-snipe .tab-day,.tab.sel-snipe .tab-date{color:var(--amber)}
+.tab.loading-tab{opacity:.5;pointer-events:none}
 
+/* MODE BADGE */
+.mode-badge{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:9px;
+  font-size:11px;margin-bottom:9px;font-weight:500}
+.mode-badge.open{background:var(--gbg);border:1px solid var(--green);color:var(--green)}
+.mode-badge.snipe{background:var(--abg);border:1px solid var(--amber);color:var(--amber)}
+.mode-badge.locked{background:var(--grbg);border:1px solid var(--grey);color:var(--grey)}
+.mode-icon{font-size:16px}
+
+/* SLOTS */
+.slots1h{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+.sl{padding:9px 3px;background:var(--card2);border:1px solid var(--line);border-radius:7px;
+  color:var(--muted);font-size:11px;cursor:pointer;text-align:center;transition:all .12s;position:relative}
+.sl.on{background:var(--gbg);border-color:var(--green);color:var(--green);font-weight:500}
+.sl.on-snipe{background:var(--abg);border-color:var(--amber);color:var(--amber);font-weight:500}
+.sl.blocked{opacity:.28;cursor:not-allowed;background:var(--rbg);border-color:rgba(255,45,85,.3)}
+.sl.preview-blocked{opacity:.35;background:var(--rbg);border-color:rgba(255,45,85,.25);cursor:default}
+.sl-dot{width:5px;height:5px;border-radius:50%;position:absolute;top:3px;right:3px}
+.sl-dot.taken{background:var(--red)}
+.sl-dot.partial{background:var(--amber)}
+
+/* COURTS */
 .courts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px}
-.ct{background:var(–card2);border:1px solid var(–line);border-radius:11px;
-padding:11px 8px;cursor:pointer;transition:all .15s;position:relative;text-align:center}
-.ct.p1{background:var(–abg);border-color:var(–amber)}
-.ct.p2{background:var(–gbg);border-color:var(–green)}
-.ct.na{opacity:.3;cursor:not-allowed;background:var(–rbg);border-color:var(–red)}
-.ct.maint{opacity:.25;cursor:not-allowed;background:var(–grbg);border-color:var(–grey)}
-.ct-n{font-family:‘Bebas Neue’,sans-serif;font-size:24px;letter-spacing:1px;line-height:1}
-.ct-sub{font-size:8px;letter-spacing:1px;color:var(–muted);text-transform:uppercase;margin-top:2px}
+.ct{background:var(--card2);border:1px solid var(--line);border-radius:11px;
+  padding:11px 6px;cursor:pointer;transition:all .15s;position:relative;text-align:center}
+.ct.p1{background:var(--abg);border-color:var(--amber)}
+.ct.p2{background:var(--gbg);border-color:var(--green)}
+.ct.na{opacity:.28;cursor:not-allowed;background:var(--rbg);border-color:rgba(255,45,85,.3)}
+.ct.maint{opacity:.22;cursor:not-allowed;background:var(--grbg);border-color:rgba(136,138,170,.3)}
+.ct.preview-na{opacity:.35;cursor:not-allowed;background:var(--rbg);border-color:rgba(255,45,85,.25)}
+.ct-n{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;line-height:1}
+.ct-sub{font-size:8px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-top:2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ct-badge{position:absolute;top:4px;right:4px;font-size:7px;font-weight:700;
-letter-spacing:.5px;padding:1px 4px;border-radius:3px}
-.bp1{background:var(–amber);color:#000}.bp2{background:rgba(13,255,140,.3);color:var(–green)}
-.bna{background:rgba(255,45,85,.3);color:var(–red)}.bm{background:rgba(136,138,170,.3);color:var(–grey)}
+  letter-spacing:.5px;padding:1px 4px;border-radius:3px}
+.bp1{background:var(--amber);color:#000}
+.bp2{background:rgba(13,255,140,.3);color:var(--green)}
+.bna{background:rgba(255,45,85,.3);color:var(--red)}
+.bm{background:rgba(136,138,170,.3);color:var(--grey)}
 
-.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;font-size:9px;color:var(–muted)}
+.legend{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px;font-size:9px;color:var(--muted)}
 .lg-item{display:flex;align-items:center;gap:4px}
 .lg-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
 
-.pts{display:flex;flex-direction:column;gap:6px}
-.pt{display:flex;align-items:center;gap:9px;background:var(–card2);border:1px solid var(–line);
-border-radius:10px;padding:9px 11px;cursor:pointer;transition:all .15s}
-.pt.on{background:var(–gbg);border-color:var(–green)}
-.ptav{width:30px;height:30px;border-radius:50%;background:var(–muted2);
-display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;
-font-family:‘Bebas Neue’,sans-serif;letter-spacing:1px;color:var(–muted)}
-.pt.on .ptav{background:rgba(13,255,140,.2);color:var(–green)}
+/* PARTNERS */
+.pts{display:flex;flex-direction:column;gap:5px}
+.pt{display:flex;align-items:center;gap:9px;background:var(--card2);border:1px solid var(--line);
+  border-radius:9px;padding:8px 11px;cursor:pointer;transition:all .15s}
+.pt.on{background:var(--gbg);border-color:var(--green)}
+.ptav{width:28px;height:28px;border-radius:50%;background:var(--muted2);
+  display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;
+  font-family:'Bebas Neue',sans-serif;letter-spacing:1px;color:var(--muted)}
+.pt.on .ptav{background:rgba(13,255,140,.2);color:var(--green)}
 .ptname{font-size:12px;font-weight:500;flex:1}
-.ptval{font-size:9px;color:var(–muted);letter-spacing:1px}
+.ptval{font-size:9px;color:var(--muted);letter-spacing:1px}
 
+/* BURST */
 .brow{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-input[type=range]{flex:1;-webkit-appearance:none;height:3px;background:var(–line);border-radius:2px;outline:none}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(–green);cursor:pointer}
-.bval{font-family:‘Bebas Neue’,sans-serif;font-size:28px;color:var(–green);min-width:42px;text-align:right;line-height:1}
+input[type=range]{flex:1;-webkit-appearance:none;height:3px;background:var(--line);border-radius:2px;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--green);cursor:pointer}
+.bval{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--green);min-width:40px;text-align:right;line-height:1}
 
-.sum{background:rgba(13,255,140,.05);border:1px solid rgba(13,255,140,.2);border-radius:12px;
-padding:11px 13px;font-size:11px;color:var(–muted);line-height:2.1;margin-bottom:10px;display:none}
+/* SUMMARY */
+.sum{background:rgba(13,255,140,.05);border:1px solid rgba(13,255,140,.2);border-radius:11px;
+  padding:10px 13px;font-size:11px;color:var(--muted);line-height:2.1;margin-bottom:9px;display:none}
 .sum.on{display:block}
-.sum b{color:var(–green)}.sep{color:var(–line);margin:0 4px}
+.sum.snipe-sum{background:rgba(255,204,0,.05);border-color:rgba(255,204,0,.2)}
+.sum b{color:var(--green)}
+.sum.snipe-sum b{color:var(--amber)}
+.sep{color:var(--line);margin:0 4px}
 
-.note{font-size:10px;color:var(–muted);line-height:1.6;padding:7px 10px;margin-top:8px;
-background:rgba(255,204,0,.04);border-left:2px solid rgba(255,204,0,.3);border-radius:0 5px 5px 0}
+.note{font-size:10px;color:var(--muted);line-height:1.6;padding:6px 10px;margin-top:8px;
+  background:rgba(255,204,0,.04);border-left:2px solid rgba(255,204,0,.25);border-radius:0 5px 5px 0}
 
-.btn-fire{width:100%;padding:17px;border-radius:13px;font-family:‘Bebas Neue’,sans-serif;
-font-size:24px;letter-spacing:4px;cursor:pointer;transition:all .18s;
-border:2px solid var(–green);background:transparent;color:var(–green);position:relative;overflow:hidden}
-.btn-fire::before{content:’’;position:absolute;inset:0;background:var(–green);
-transform:scaleX(0);transform-origin:left;transition:transform .18s}
+/* FIRE BUTTON */
+.btn-fire{width:100%;padding:17px;border-radius:13px;font-family:'Bebas Neue',sans-serif;
+  font-size:22px;letter-spacing:4px;cursor:pointer;transition:all .18s;
+  border:2px solid var(--green);background:transparent;color:var(--green);position:relative;overflow:hidden}
+.btn-fire::before{content:'';position:absolute;inset:0;background:var(--green);
+  transform:scaleX(0);transform-origin:left;transition:transform .18s}
 .btn-fire:active::before{transform:scaleX(1)}
 .btn-fire:active{color:#000}
 .btn-fire span{position:relative;z-index:1}
-.btn-fire.off{border-color:var(–muted);color:var(–muted);pointer-events:none}
-.btn-fire.armed{border-color:var(–amber);color:var(–amber)}
-.btn-fire.armed::before{background:var(–amber)}
-.btn-fire.firing{border-color:var(–red);animation:shk .08s infinite}
-.btn-fire.firing::before{background:var(–red);transform:scaleX(1)}
+.btn-fire.off{border-color:var(--muted);color:var(--muted);pointer-events:none}
+.btn-fire.snipe-mode{border-color:var(--amber);color:var(--amber)}
+.btn-fire.snipe-mode::before{background:var(--amber)}
+.btn-fire.armed{border-color:var(--amber);color:var(--amber);animation:pulse-border 1.5s infinite}
+.btn-fire.armed::before{background:var(--amber)}
+@keyframes pulse-border{0%,100%{box-shadow:0 0 0 0 rgba(255,204,0,.4)}50%{box-shadow:0 0 0 8px rgba(255,204,0,0)}}
+.btn-fire.firing{border-color:var(--red);animation:shk .08s infinite}
+.btn-fire.firing::before{background:var(--red);transform:scaleX(1)}
 .btn-fire.firing span{color:#fff!important}
-.btn-fire.ok::before{background:var(–green);transform:scaleX(1)}
+.btn-fire.ok::before{background:var(--green);transform:scaleX(1)}
 .btn-fire.ok span{color:#000!important}
 @keyframes shk{33%{transform:translateX(-2px)}66%{transform:translateX(2px)}}
-.btn-dis{width:100%;margin-top:7px;padding:8px;background:none;border:1px solid var(–line);
-border-radius:8px;color:var(–muted);font-family:‘DM Mono’,monospace;font-size:10px;cursor:pointer;display:none}
+.btn-dis{width:100%;margin-top:6px;padding:8px;background:none;border:1px solid var(--line);
+  border-radius:8px;color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;cursor:pointer;display:none}
 .btn-dis.on{display:block}
-.btn-dis:active{border-color:var(–red);color:var(–red)}
+.btn-dis:active{border-color:var(--red);color:var(--red)}
 
-.logwrap{background:var(–card);border:1px solid var(–line);border-radius:13px;overflow:hidden;margin-top:10px}
-.loghd{background:var(–card2);border-bottom:1px solid var(–line);padding:8px 12px;
-display:flex;justify-content:space-between;align-items:center}
-.logt{font-size:9px;color:var(–muted);letter-spacing:3px;text-transform:uppercase}
-.logcl{background:none;border:none;color:var(–muted2);font-family:‘DM Mono’,monospace;font-size:10px;cursor:pointer}
-.logbd{height:160px;overflow-y:auto;padding:8px 12px;font-size:10px;line-height:1.9}
-.le{display:flex;gap:9px}
-.lt{color:var(–muted2);white-space:nowrap;font-size:9px}
-.li{color:var(–blue)}.lok{color:var(–green)}.ler{color:var(–red)}.lw{color:var(–amber)}.ld{color:var(–muted)}
+/* LOG */
+.logwrap{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:9px}
+.loghd{background:var(--card2);border-bottom:1px solid var(--line);padding:8px 12px;
+  display:flex;justify-content:space-between;align-items:center}
+.logt{font-size:9px;color:var(--muted);letter-spacing:3px;text-transform:uppercase}
+.logcl{background:none;border:none;color:var(--muted2);font-family:'DM Mono',monospace;font-size:10px;cursor:pointer}
+.logbd{height:150px;overflow-y:auto;padding:8px 12px;font-size:10px;line-height:1.9}
+.le{display:flex;gap:8px}
+.lt{color:var(--muted2);white-space:nowrap;font-size:9px}
+.li{color:var(--blue)}.lok{color:var(--green)}.ler{color:var(--red)}.lw{color:var(--amber)}.ld{color:var(--muted)}
 
-::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(–line);border-radius:2px}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--line);border-radius:2px}
 </style>
-
 </head>
 <body>
 <div class="wrap">
@@ -180,32 +222,33 @@ display:flex;justify-content:space-between;align-items:center}
   <div class="tagline">Tennis &middot; Club Borotra &middot; Courbevoie</div>
 </div>
 
+<!-- HORLOGE -->
 <div class="clkbar">
   <div class="clkbox">
     <div class="clknum" id="clk">--:--:--<span class="clkms">.---</span></div>
     <div class="clklbl">Heure</div>
   </div>
   <div class="cdbox">
-    <div class="clklbl" style="margin-bottom:3px">Avant 23h</div>
+    <div class="clklbl" style="margin-bottom:2px">Avant 23h</div>
     <div class="cdnum" id="cd">--:--:--</div>
-    <div class="clklbl" style="margin-top:3px" id="cdsub">en attente</div>
+    <div class="clklbl" style="margin-top:2px" id="cdsub">en attente</div>
   </div>
   <div class="clkbox">
-    <div class="clknum" id="datclk" style="font-size:16px;letter-spacing:0">---</div>
+    <div class="clknum" id="datclk" style="font-size:15px;letter-spacing:0">---</div>
     <div class="clklbl">Aujourd'hui</div>
   </div>
 </div>
 
+<!-- STATUS -->
 <div class="sb">
   <div class="dot" id="dot"></div>
   <span class="sbmsg" id="sbmsg">Etape 1 : connexion</span>
   <span class="sbatt" id="sbatt">Tentatives : <b id="attn">0</b></span>
 </div>
 
-<!-- ETAPE 1 -->
-
+<!-- ETAPE 1 : CONNEXION -->
 <div class="card">
-  <div class="ctitle"><span class="step active" id="s1">1</span>Connexion &amp; chargement grille</div>
+  <div class="ctitle">1 &mdash; Connexion</div>
   <div class="row2">
     <div class="field"><label>Login</label>
       <input type="text" id="login" value="OLVIDE" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false">
@@ -214,37 +257,35 @@ display:flex;justify-content:space-between;align-items:center}
       <input type="password" id="pwd" value="k@SJmXrm+q9t" autocomplete="off">
     </div>
   </div>
-  <div class="row2" style="margin-bottom:9px">
-    <div class="field"><label>Date cible</label>
-      <input type="date" id="tdate" oninput="onDateChange()">
-    </div>
-    <div class="field"><label>Heure de tir</label>
-      <input type="time" id="firetime" value="23:00">
-    </div>
+  <div class="field"><label>Heure de tir sniper</label>
+    <input type="time" id="firetime" value="23:00">
   </div>
-  <div class="qdrow" id="qdrow"></div>
-  <button class="btn-connect" id="btnconn" onclick="doConnect()" style="margin-top:12px">
-    SE CONNECTER ET CHARGER
+  <button class="btn-connect" id="btnconn" onclick="doConnect()">
+    SE CONNECTER ET CHARGER LES 4 JOURS
   </button>
   <div class="conn-status" id="connstatus"></div>
-  <div class="note">Proxy CORS actif. Connexion directe via premier-service.fr.</div>
 </div>
 
-<!-- ETAPE 2 -->
+<!-- ONGLETS DATES -->
+<div class="tabs" id="tabsRow" style="opacity:.4;pointer-events:none"></div>
 
+<!-- MODE BADGE -->
+<div class="mode-badge locked" id="modeBadge" style="display:none">
+  <span class="mode-icon">🔒</span>
+  <span id="modeText">Connectez-vous d'abord</span>
+</div>
+
+<!-- ETAPE 2 : CRENEAUX -->
 <div class="card" id="card-slot" style="opacity:.4;pointer-events:none">
-  <div class="ctitle"><span class="step" id="s2">2</span>Creneau de jeu (1h)</div>
+  <div class="ctitle">2 &mdash; Creneau de jeu (1h)</div>
   <div class="slots1h" id="slotsgrid"></div>
-  <div class="note">Creneaux d'1 heure. Gris = bloque par prof ou maintenance.</div>
+  <div class="note" id="slotnote">Selectionnez une date d'abord.</div>
 </div>
 
-<!-- ETAPE 3 -->
-
+<!-- ETAPE 3 : TERRAINS -->
 <div class="card" id="card-courts" style="opacity:.4;pointer-events:none">
-  <div class="ctitle"><span class="step" id="s3">3</span>Choix des terrains</div>
-  <div id="gridmsg" style="font-size:10px;color:var(--muted);margin-bottom:8px">
-    Connectez-vous d'abord pour voir les disponibilites.
-  </div>
+  <div class="ctitle">3 &mdash; Terrains</div>
+  <div id="gridmsg" style="font-size:10px;color:var(--muted);margin-bottom:8px">Connectez-vous d'abord.</div>
   <div class="courts-grid" id="courtsgrid"></div>
   <div class="legend">
     <div class="lg-item"><div class="lg-dot" style="background:var(--amber)"></div>Priorite 1</div>
@@ -255,17 +296,15 @@ display:flex;justify-content:space-between;align-items:center}
   <div class="note">1 tap = Priorite &bull; 2 taps = Alternatif &bull; 3 taps = off</div>
 </div>
 
-<!-- ETAPE 4 -->
-
+<!-- ETAPE 4 : PARTENAIRE -->
 <div class="card" id="card-partner" style="opacity:.4;pointer-events:none">
-  <div class="ctitle"><span class="step" id="s4">4</span>Partenaire</div>
+  <div class="ctitle">4 &mdash; Partenaire</div>
   <div class="pts" id="plist"></div>
 </div>
 
-<!-- ETAPE 5 -->
-
+<!-- ETAPE 5 : RAFALE -->
 <div class="card" id="card-burst" style="opacity:.4;pointer-events:none">
-  <div class="ctitle"><span class="step" id="s5">5</span>Parametres de rafale</div>
+  <div class="ctitle">5 &mdash; Parametres de rafale</div>
   <div class="brow">
     <span style="font-size:10px;color:var(--muted);white-space:nowrap">Req / sec</span>
     <input type="range" id="brate" min="1" max="20" value="15" oninput="document.getElementById('bval').textContent=this.value;updateSum()">
@@ -281,11 +320,13 @@ display:flex;justify-content:space-between;align-items:center}
 
 <div class="sum" id="sum"></div>
 
+<!-- BOUTON FEU -->
 <div>
-  <button class="btn-fire off" id="btnfire" onclick="armOrFire()"><span id="firelbl">CONNECTEZ-VOUS D'ABORD</span></button>
+  <button class="btn-fire off" id="btnfire" onclick="handleFireBtn()"><span id="firelbl">CONNECTEZ-VOUS D'ABORD</span></button>
   <button class="btn-dis" id="btndis" onclick="disarm()">Desarmer</button>
 </div>
 
+<!-- LOG -->
 <div class="logwrap">
   <div class="loghd">
     <span class="logt">Journal</span>
@@ -299,8 +340,6 @@ display:flex;justify-content:space-between;align-items:center}
 <script>
 // ============================================================
 // PROXY CORS
-// On essaie plusieurs proxies publics dans l'ordre
-// Si l'un echoue, on passe au suivant automatiquement
 // ============================================================
 const PROXIES = [
   'https://corsproxy.io/?',
@@ -308,54 +347,32 @@ const PROXIES = [
   'https://cors-anywhere.herokuapp.com/',
 ];
 let proxyIdx = 0;
+let SESSION_COOKIE = '';
 
 function proxyUrl(url) {
   const p = PROXIES[proxyIdx];
-  if (p === 'https://corsproxy.io/?') return p + encodeURIComponent(url);
-  if (p === 'https://api.allorigins.win/raw?url=') return p + encodeURIComponent(url);
+  if (p.includes('corsproxy.io') || p.includes('allorigins')) return p + encodeURIComponent(url);
   return p + url;
 }
 
 async function pfetch(url, opts={}) {
-  // Essayer d'abord sans proxy (meme domaine ou si cookies necessaires)
-  // Puis avec proxy si echec
   let lastErr;
   for (let i = 0; i < PROXIES.length; i++) {
     proxyIdx = i;
     try {
-      const purl = proxyUrl(url);
-      const headers = Object.assign({
-        'X-Requested-With': 'XMLHttpRequest',
-      }, opts.headers||{});
-      const r = await fetch(purl, Object.assign({}, opts, {
-        headers,
-        credentials: 'omit', // proxy ne peut pas transmettre les cookies
-      }));
+      const headers = Object.assign({'X-Requested-With':'XMLHttpRequest'}, opts.headers||{});
+      if (SESSION_COOKIE) headers['Cookie'] = SESSION_COOKIE;
+      const r = await fetch(proxyUrl(url), Object.assign({}, opts, {headers, credentials:'omit'}));
       if (r.ok || r.status < 500) {
-        log('Proxy OK: ' + PROXIES[i].split('/')[2], 'ld');
+        // Tenter de recuperer cookie
+        const sc = r.headers.get('set-cookie')||'';
+        const sm = sc.match(/PHPSESSID=([^;]+)/);
+        if (sm) SESSION_COOKIE = 'PHPSESSID=' + sm[1];
         return r;
       }
-    } catch(e) {
-      lastErr = e;
-      log('Proxy ' + PROXIES[i].split('/')[2] + ' echoue', 'lw');
-    }
+    } catch(e) { lastErr = e; }
   }
-  throw lastErr || new Error('Tous les proxies ont echoue');
-}
-
-// ============================================================
-// NOTE IMPORTANTE SUR LES COOKIES :
-// Les proxies CORS ne transmettent pas les cookies de session.
-// On va donc passer les cookies manuellement dans les headers.
-// Apres le login, on recupere le PHPSESSID depuis la reponse
-// et on l'injecte dans toutes les requetes suivantes.
-// ============================================================
-let SESSION_COOKIE = '';
-
-async function pfetchWithSession(url, opts={}) {
-  const headers = Object.assign({}, opts.headers||{});
-  if (SESSION_COOKIE) headers['Cookie'] = SESSION_COOKIE;
-  return pfetch(url, Object.assign({}, opts, {headers}));
+  throw lastErr || new Error('Proxy echec');
 }
 
 // ============================================================
@@ -369,37 +386,59 @@ const COURTS = [
   {id:27,n:7},{id:28,n:8},{id:29,n:9},
   {id:30,n:10},{id:31,n:11},{id:32,n:12}
 ];
-
 const SLOTS_1H = ['08:00','09:00','10:00','11:00','12:00','13:00',
                   '14:00','15:00','16:00','17:00','18:00','19:00',
                   '20:00','21:00','22:00'];
-
 const PARTNERS = [
   {name:'Aucun',      val:null,   av:'--'},
   {name:'D. Nozahic', val:'-100', av:'DN'},
   {name:'L. Soule',   val:'-101', av:'LS'},
   {name:'P. Binet',   val:'-102', av:'PB'},
 ];
-
 const DAYS   = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
 const DAYSFR = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
 const MONTHS = ['Jan','Fev','Mar','Avr','Mai','Jun','Jul','Aou','Sep','Oct','Nov','Dec'];
 
+// ============================================================
+// STATE
+// ============================================================
 const S = {
-  connected:false, courtStatus:{}, slotStatus:{},
-  prio:[], partner:0, slot:null,
-  armed:false, firing:false, attempts:0, success:false, iv:null
+  connected: false,
+  // Par date ISO: {courtStatus:{id:{free,maint,label}}, slotStatus:{slot:{free,allBlocked,partial}}}
+  grids: {},
+  activeTab: 3,    // 0=J, 1=J+1, 2=J+2, 3=J+3
+  prio: [],
+  partner: 0,
+  slot: null,
+  armed: false,
+  firing: false,
+  attempts: 0,
+  success: false,
+  iv: null,
 };
+
+// ============================================================
+// DATES HELPERS
+// ============================================================
+function iso(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}
+function ddfr(s){const[y,m,d]=s.split('-');return d+'/'+m+'/'+y}
+function dayname(s){return DAYSFR[new Date(s+'T12:00:00').getDay()]}
+
+function getTabDate(offset) {
+  const d = new Date(); d.setDate(d.getDate() + offset); return iso(d);
+}
+function isJ3(tabIdx) { return tabIdx === 3; }
 
 // ============================================================
 // INIT
 // ============================================================
 function init() {
-  const d3 = new Date(); d3.setDate(d3.getDate()+3);
-  document.getElementById('tdate').value = iso(d3);
-  buildQD(); buildSlots(); buildCourts(); buildPartners();
+  buildTabs();
+  buildSlots();
+  buildCourts();
+  buildPartners();
   tick();
-  log('Pret. Proxy CORS actif. Cliquez Se connecter.', 'li');
+  log('Pret. Cliquez Se connecter.', 'li');
 }
 
 // ============================================================
@@ -413,263 +452,312 @@ function tick() {
   const ft = (document.getElementById('firetime').value||'23:00').split(':').map(Number);
   const tgt = new Date(n); tgt.setHours(ft[0],ft[1],0,0);
   if(n>=tgt) tgt.setDate(tgt.getDate()+1);
-  const diff = tgt-n;
+  const diff = tgt - n;
   const ch=Math.floor(diff/3600000),cm=Math.floor((diff%3600000)/60000),cs=Math.floor((diff%60000)/1000);
-  const el=document.getElementById('cd');
-  el.textContent=p2(ch)+':'+p2(cm)+':'+p2(cs);
-  el.className='cdnum'+(diff<10000?' hot':'');
-  document.getElementById('cdsub').textContent=diff<10000?'FEU IMMINENT':diff<60000?'bientot':'en attente';
-  if(S.armed&&!S.firing){
-    const now=new Date();
+  const el = document.getElementById('cd');
+  el.textContent = p2(ch)+':'+p2(cm)+':'+p2(cs);
+  el.className = 'cdnum'+(diff<10000?' hot':'');
+  document.getElementById('cdsub').textContent = diff<10000?'FEU IMMINENT':diff<60000?'bientot':'en attente';
+
+  // Auto-trigger si arme sur J+3 et heure de tir atteinte
+  if(S.armed && !S.firing && isJ3(S.activeTab)) {
+    const now = new Date();
     if(now.getHours()===ft[0]&&now.getMinutes()===ft[1]&&now.getSeconds()===0) startFire();
   }
   requestAnimationFrame(tick);
 }
 
 // ============================================================
-// DATES
+// TABS
 // ============================================================
-function iso(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}
-function ddfr(s){const[y,m,d]=s.split('-');return d+'/'+m+'/'+y}
-function dayname(s){return DAYSFR[new Date(s+'T12:00:00').getDay()]}
-
-function buildQD(){
-  const c=document.getElementById('qdrow'),t=new Date();
-  for(let i=1;i<=3;i++){
-    const d=new Date(t);d.setDate(t.getDate()+i);
-    const v=iso(d);
-    const b=document.createElement('button');
-    b.className='qd'+(i===3?' on':'');
-    b.dataset.v=v;
-    b.textContent=DAYS[d.getDay()]+' '+d.getDate()+(i===3?' J+3':'');
-    b.onclick=()=>{
-      document.querySelectorAll('.qd').forEach(x=>x.classList.remove('on'));
-      b.classList.add('on');
-      document.getElementById('tdate').value=v;
-      if(S.connected) resetConn();
-    };
-    c.appendChild(b);
-    if(i===3) document.getElementById('tdate').value=v;
+function buildTabs() {
+  const c = document.getElementById('tabsRow');
+  c.innerHTML = '';
+  const labels = ['Auj.','J+1','J+2','J+3'];
+  for (let i = 0; i < 4; i++) {
+    const dv = getTabDate(i);
+    const d = new Date(dv+'T12:00:00');
+    const isSnipe = (i === 3);
+    const tab = document.createElement('div');
+    tab.className = 'tab' + (i === S.activeTab ? (isSnipe?' sel-snipe':' sel-open') : '');
+    tab.id = 'tab'+i;
+    tab.innerHTML =
+      '<div class="tab-label">'+labels[i]+'</div>'+
+      '<div class="tab-day">'+DAYS[d.getDay()]+'</div>'+
+      '<div class="tab-date">'+d.getDate()+' '+MONTHS[d.getMonth()]+'</div>'+
+      (S.connected ? '<span class="tab-badge '+(isSnipe?'tb-snipe':'tb-open')+'">'+(isSnipe?'SNIPE':'OPEN')+'</span>' : '');
+    tab.onclick = () => selectTab(i);
+    c.appendChild(tab);
   }
 }
 
-function onDateChange(){
-  const v=document.getElementById('tdate').value;
-  document.querySelectorAll('.qd').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
-  if(S.connected) resetConn();
+function selectTab(i) {
+  S.activeTab = i;
+  S.prio = [];
+  S.slot = null;
+  buildTabs();
+  updateModeBadge();
+  buildSlots();
+  buildCourts();
+  updateSum();
+  updateFireBtn();
 }
 
-function resetConn(){
-  S.connected=false; S.courtStatus={}; S.slotStatus={}; S.prio=[]; S.slot=null;
-  SESSION_COOKIE='';
-  document.getElementById('btnconn').className='btn-connect';
-  document.getElementById('btnconn').textContent='SE CONNECTER ET CHARGER';
-  document.getElementById('connstatus').classList.remove('show');
-  lockCards(true);
-  setBtn('off','CONNECTEZ-VOUS D\'ABORD');
-  buildCourts(); buildSlots();
+function updateModeBadge() {
+  const el = document.getElementById('modeBadge');
+  const txt = document.getElementById('modeText');
+  if (!S.connected) { el.style.display='none'; return; }
+  el.style.display = 'flex';
+  const dv = getTabDate(S.activeTab);
+  const d = new Date(dv+'T12:00:00');
+  const ds = DAYS[d.getDay()]+' '+d.getDate()+' '+MONTHS[d.getMonth()];
+  const ft = document.getElementById('firetime').value||'23:00';
+
+  if (isJ3(S.activeTab)) {
+    el.className = 'mode-badge snipe';
+    txt.textContent = 'SNIPER — ' + ds + ' — Tir a ' + ft;
+  } else {
+    el.className = 'mode-badge open';
+    txt.textContent = 'RESERVATION DIRECTE — ' + ds;
+  }
 }
 
 // ============================================================
-// ETAPE 1 : CONNEXION
+// CONNEXION + CHARGEMENT 4 GRILLES
 // ============================================================
 async function doConnect() {
   const btn = document.getElementById('btnconn');
-  btn.className='btn-connect loading';
-  btn.textContent='CONNEXION...';
+  btn.className = 'btn-connect loading';
+  btn.textContent = 'CONNEXION...';
   setDot('conn','Connexion en cours...');
   log('Connexion via proxy CORS...','li');
 
   const ok = await doLogin(false);
-  if(!ok){
-    btn.className='btn-connect';
-    btn.textContent='REESSAYER';
-    setDot('','Echec - reessayez');
+  if (!ok) {
+    btn.className = 'btn-connect';
+    btn.textContent = 'REESSAYER';
+    setDot('','Echec connexion');
     showConnStatus([{t:'err',m:'Connexion echouee. Verifiez login/mdp.'}]);
-    log('Echec connexion.','ler');
+    log('Echec.','ler');
     return;
   }
+  log('Connecte ! Chargement des 4 grilles...','lok');
+  btn.textContent = 'CHARGEMENT...';
 
-  log('Connecte ! Chargement grille...','lok');
-  btn.textContent='CHARGEMENT GRILLE...';
-
-  const dv = document.getElementById('tdate').value;
-  const gridOk = await loadGrid(dv);
-
-  btn.className='btn-connect done';
-  btn.textContent='CONNECTE ✓';
-  S.connected=true;
-  setDot('ok','Connecte');
-  document.getElementById('s1').className='step done';
-  lockCards(false);
-  buildSlots(); buildCourts(); updateSum();
-
-  const d=new Date(dv+'T12:00:00');
-  const nFree=COURTS.filter(c=>S.courtStatus[c.id]?.free!==false&&!S.courtStatus[c.id]?.maint).length;
-  const nBusy=COURTS.filter(c=>S.courtStatus[c.id]?.free===false).length;
-  const nMaint=COURTS.filter(c=>S.courtStatus[c.id]?.maint).length;
-
-  showConnStatus([
-    {t:'ok', m:'Connecte: '+document.getElementById('login').value},
-    {t:'ok', m:'Grille du '+DAYS[d.getDay()]+' '+d.getDate()+' '+MONTHS[d.getMonth()]+(gridOk?' chargee':' - non encore ouverte')},
-    {t:nFree>0?'ok':'warn', m:nFree+' libre(s), '+nBusy+' pris, '+nMaint+' maintenance'},
-    {t:'ok', m:'Selectionnez creneau, terrain et armez !'},
+  // Charger les 4 grilles en parallele
+  const results = await Promise.allSettled([
+    loadGrid(0), loadGrid(1), loadGrid(2), loadGrid(3)
   ]);
 
-  setBtn('','ARMER LE SNIPER');
-  document.getElementById('btnfire').classList.remove('off');
-  log('Grille chargee. '+nFree+' courts libres.','lok');
+  S.connected = true;
+  btn.className = 'btn-connect done';
+  btn.textContent = 'CONNECTE ✓';
+  setDot('ok','Connecte');
+
+  // Activer les elements
+  document.getElementById('tabsRow').style.opacity = '1';
+  document.getElementById('tabsRow').style.pointerEvents = 'auto';
+  document.getElementById('modeBadge').style.display = 'flex';
+  lockCards(false);
+  buildTabs();
+  selectTab(3); // Afficher J+3 par defaut
+
+  // Rapport
+  const msgs = [{t:'ok', m:'Connecte: '+document.getElementById('login').value}];
+  results.forEach((r, i) => {
+    const dv = getTabDate(i);
+    const d = new Date(dv+'T12:00:00');
+    const label = ['Auj.','J+1','J+2','J+3'][i]+' '+DAYS[d.getDay()]+' '+d.getDate();
+    const grid = S.grids[dv];
+    if (r.status === 'fulfilled' && grid) {
+      const nF = COURTS.filter(c=>grid.courtStatus[c.id]?.free!==false&&!grid.courtStatus[c.id]?.maint).length;
+      msgs.push({t: nF>0?'ok':'warn', m: label+': '+nF+'/6 libres'});
+    } else {
+      msgs.push({t:'warn', m: label+': grille non disponible'});
+    }
+  });
+  msgs.push({t:'ok', m:'Choisissez un onglet, un creneau et armez !'});
+  showConnStatus(msgs);
+  updateFireBtn();
+  log('4 grilles chargees.','lok');
 }
 
-function showConnStatus(msgs){
-  const el=document.getElementById('connstatus');
-  el.innerHTML=msgs.map(m=>'<span class="conn-'+m.t+'">'+m.m+'</span>').join('<br>');
+function showConnStatus(msgs) {
+  const el = document.getElementById('connstatus');
+  el.innerHTML = msgs.map(m=>'<span class="conn-'+m.t+'">'+m.m+'</span>').join('<br>');
   el.classList.add('show');
 }
 
-function lockCards(locked){
+function lockCards(locked) {
   ['card-slot','card-courts','card-partner','card-burst'].forEach(id=>{
     const el=document.getElementById(id);
     el.style.opacity=locked?'0.4':'1';
     el.style.pointerEvents=locked?'none':'auto';
   });
-  ['s2','s3','s4','s5'].forEach(id=>{
-    document.getElementById(id).className='step'+(locked?'':' active');
-  });
 }
 
 // ============================================================
-// CHARGER GRILLE
+// CHARGEMENT GRILLE
 // ============================================================
-async function loadGrid(dv){
-  try{
-    const ts=Date.now();
-    const url=BASE+'?idact=328&idses=S0&CHAMP_SELECTEUR_JOUR='+encodeURIComponent(ddfr(dv)+' '+dayname(dv))+'&_='+ts;
-    const r=await pfetchWithSession(url);
-    const txt=await r.text();
-    log('Grille: '+txt.length+' octets','ld');
-    parseGrid(txt);
+async function loadGrid(tabIdx) {
+  const dv = getTabDate(tabIdx);
+  try {
+    const ts = Date.now();
+    const url = BASE+'?idact=328&idses=S0&CHAMP_SELECTEUR_JOUR='+encodeURIComponent(ddfr(dv)+' '+dayname(dv))+'&_='+ts;
+    const r = await pfetch(url);
+    const txt = await r.text();
+    log('Grille J+'+(tabIdx)+': '+txt.length+' octets','ld');
+    S.grids[dv] = parseGrid(txt);
     return true;
-  }catch(e){
-    log('Grille indisponible (J+3 pas encore ouverte)','lw');
+  } catch(e) {
+    log('Grille J+'+tabIdx+' indispo','lw');
+    // Creer une grille vide (tous libres) pour ne pas bloquer
+    S.grids[dv] = {
+      courtStatus: Object.fromEntries(COURTS.map(c=>[c.id,{free:true,maint:false,label:''}])),
+      slotStatus: Object.fromEntries(SLOTS_1H.map(s=>[s,{free:true,allBlocked:false,partial:false}]))
+    };
     return false;
   }
 }
 
-function parseGrid(txt){
-  S.slotStatus={};
-  COURTS.forEach(c=>{S.courtStatus[c.id]={free:true,label:'',maint:false}});
-  const lteMap={1:27,2:28,3:29,4:30,5:31,6:32};
-  const courtSlotMap={};
+function parseGrid(txt) {
+  const grid = {
+    courtStatus: Object.fromEntries(COURTS.map(c=>[c.id,{free:true,maint:false,label:''}])),
+    slotStatus: {}
+  };
+  const lteMap = {1:27,2:28,3:29,4:30,5:31,6:32};
+  const courtSlotMap = {};
 
-  // Parser les selecteurs multi-terrains
-  const multiRe=/\$\("([^"]+)"\)[^;]*addClass\("([^"]+)"\)/g;
+  // Parser selecteurs multiples
+  const re = /\$\("([^"]+)"\)[^;]*addClass\("([^"]+)"\)/g;
   let m;
-  while((m=multiRe.exec(txt))!==null){
-    const sel=m[1],cls=m[2];
-    sel.split(',').forEach(part=>{
-      const pm=part.trim().match(/#lte(\d+)[^#]*#ch_(\d{2})_(\d{2})/);
-      if(pm){
+  while ((m=re.exec(txt))!==null) {
+    m[1].split(',').forEach(part => {
+      const pm = part.trim().match(/#lte(\d+)[^#]*#ch_(\d{2})_(\d{2})/);
+      if (pm) {
         const lte=parseInt(pm[1]),slot=pm[2]+':'+pm[3];
-        if(!courtSlotMap[lte]) courtSlotMap[lte]={};
-        if(!courtSlotMap[lte][slot]) courtSlotMap[lte][slot]=cls;
+        if (!courtSlotMap[lte]) courtSlotMap[lte]={};
+        if (!courtSlotMap[lte][slot]) courtSlotMap[lte][slot]=m[2];
       }
     });
   }
 
-  // Detecter maintenance
-  const maintRe=/CLUB\s*-\s*(\d+)[^<]*(?:<[^>]*>)*[^<]*MAINTENANCE/gi;
-  while((m=maintRe.exec(txt))!==null){
-    const n=parseInt(m[1]);
-    const c=COURTS.find(x=>x.n===n);
-    if(c) S.courtStatus[c.id].maint=true;
+  // Maintenance
+  const mre = /CLUB\s*-\s*(\d+)[^<]*(?:<[^>]*>)*[^<]*MAINTENANCE/gi;
+  while ((m=mre.exec(txt))!==null) {
+    const c=COURTS.find(x=>x.n===parseInt(m[1]));
+    if (c) grid.courtStatus[c.id].maint=true;
   }
 
-  // Agregation par creneau
-  SLOTS_1H.forEach(slot=>{
-    let blocked=0,free=0;
-    COURTS.forEach(c=>{
-      const lte=Object.keys(lteMap).find(k=>parseInt(lteMap[k])===c.id);
-      if(!lte) return;
-      const cls=(courtSlotMap[parseInt(lte)]||{})[slot]||'';
-      /mpleine|fpleine/.test(cls) ? blocked++ : free++;
+  // Agregation par slot
+  SLOTS_1H.forEach(slot => {
+    let blocked=0, free=0;
+    COURTS.forEach(c => {
+      const lte = Object.keys(lteMap).find(k=>parseInt(lteMap[k])===c.id);
+      if (!lte) return;
+      /mpleine|fpleine/.test((courtSlotMap[parseInt(lte)]||{})[slot]||'') ? blocked++ : free++;
     });
-    S.slotStatus[slot]={free:free>0,allBlocked:free===0,partial:blocked>0&&free>0};
+    grid.slotStatus[slot] = {free:free>0, allBlocked:free===0, partial:blocked>0&&free>0};
   });
+
+  return grid;
 }
 
 // ============================================================
 // SLOTS
 // ============================================================
-function buildSlots(){
-  const g=document.getElementById('slotsgrid');
-  g.innerHTML='';
-  SLOTS_1H.forEach(t=>{
-    const st=S.slotStatus[t]||{free:true};
-    const b=document.createElement('button');
-    b.className='sl'+(t===S.slot?' on':'')+(S.connected&&st.allBlocked?' blocked':S.connected&&st.partial?' partial':'');
-    b.textContent=t.slice(0,5);
-    b.onclick=()=>{
-      if(b.classList.contains('blocked')) return;
-      document.querySelectorAll('.sl').forEach(x=>x.classList.remove('on'));
-      b.classList.add('on');
-      S.slot=t;
+function buildSlots() {
+  const g = document.getElementById('slotsgrid');
+  const note = document.getElementById('slotnote');
+  g.innerHTML = '';
+  const dv = getTabDate(S.activeTab);
+  const grid = S.grids[dv];
+  const isSnipe = isJ3(S.activeTab);
+
+  SLOTS_1H.forEach(t => {
+    const st = grid?.slotStatus[t] || {free:true};
+    const b = document.createElement('button');
+    let cls = 'sl';
+    if (t === S.slot) cls += isSnipe ? ' on-snipe' : ' on';
+    else if (S.connected && st.allBlocked) cls += ' blocked';
+    else if (S.connected && st.partial) cls += ' partial';
+    b.className = cls;
+    b.innerHTML = t.slice(0,5) + (S.connected && st.partial ? '<span class="sl-dot partial"></span>' : '') +
+                  (S.connected && st.allBlocked ? '<span class="sl-dot taken"></span>' : '');
+    b.onclick = () => {
+      if (b.classList.contains('blocked')) return;
+      document.querySelectorAll('.sl').forEach(x=>x.classList.remove('on','on-snipe'));
+      b.classList.add(isSnipe ? 'on-snipe' : 'on');
+      S.slot = t;
       buildCourts();
       updateSum();
+      updateFireBtn();
     };
     g.appendChild(b);
   });
+
+  if (isSnipe) {
+    note.textContent = 'J+3 - Slots gris = deja bloques par profs. Choisissez votre creneau.';
+  } else {
+    note.textContent = 'Slots gris = tous terrains pris. Orange = partiellement pris.';
+  }
 }
 
 // ============================================================
 // COURTS
 // ============================================================
-function buildCourts(){
-  const g=document.getElementById('courtsgrid');
-  g.innerHTML='';
-  const msg=document.getElementById('gridmsg');
-  if(!S.connected){msg.style.display='block';msg.textContent='Connectez-vous d\'abord.';return;}
-  if(!S.slot){msg.style.display='block';msg.textContent='Selectionnez un creneau d\'abord.';return;}
-  msg.style.display='none';
-  COURTS.forEach(c=>{
-    const st=S.courtStatus[c.id]||{free:true,maint:false};
-    const pi=S.prio.indexOf(c.id);
-    let cls='ct';
-    if(st.maint) cls+=' maint';
-    else if(!st.free) cls+=' na';
-    else if(pi===0) cls+=' p1';
-    else if(pi>0) cls+=' p2';
-    const el=document.createElement('div');
-    el.className=cls;
-    let badge='';
-    if(st.maint) badge='<span class="ct-badge bm">MAINT</span>';
-    else if(!st.free) badge='<span class="ct-badge bna">PRIS</span>';
-    else if(pi===0) badge='<span class="ct-badge bp1">P1</span>';
-    else if(pi>0) badge='<span class="ct-badge bp2">P'+(pi+1)+'</span>';
-    el.innerHTML=badge+'<div class="ct-n">'+c.n+'</div><div class="ct-sub">'+(st.label||'Court')+'</div>';
-    if(!st.maint&&st.free) el.onclick=()=>cycleCourt(c.id);
+function buildCourts() {
+  const g = document.getElementById('courtsgrid');
+  const msg = document.getElementById('gridmsg');
+  g.innerHTML = '';
+  const dv = getTabDate(S.activeTab);
+  const grid = S.grids[dv];
+  const isSnipe = isJ3(S.activeTab);
+
+  if (!S.connected) { msg.style.display='block'; msg.textContent='Connectez-vous d\'abord.'; return; }
+  if (!S.slot) { msg.style.display='block'; msg.textContent='Selectionnez un creneau.'; return; }
+  msg.style.display = 'none';
+
+  COURTS.forEach(c => {
+    const st = grid?.courtStatus[c.id] || {free:true,maint:false};
+    const pi = S.prio.indexOf(c.id);
+    let cls = 'ct';
+    if (st.maint) cls += ' maint';
+    else if (!st.free) cls += isSnipe ? ' preview-na' : ' na';
+    else if (pi===0) cls += ' p1';
+    else if (pi>0) cls += ' p2';
+    const el = document.createElement('div');
+    el.className = cls;
+    let badge = '';
+    if (st.maint) badge = '<span class="ct-badge bm">MAINT</span>';
+    else if (!st.free) badge = '<span class="ct-badge bna">'+(isSnipe?'PROF':'PRIS')+'</span>';
+    else if (pi===0) badge = '<span class="ct-badge bp1">P1</span>';
+    else if (pi>0) badge = '<span class="ct-badge bp2">P'+(pi+1)+'</span>';
+    el.innerHTML = badge+'<div class="ct-n">'+c.n+'</div><div class="ct-sub">'+(st.label||'Court')+'</div>';
+    // Selectionnable si libre (meme en mode preview J+3)
+    if (!st.maint && st.free) el.onclick = () => { cycleCourt(c.id); };
     g.appendChild(el);
   });
 }
 
-function cycleCourt(id){
-  const i=S.prio.indexOf(id);
-  if(i===-1) S.prio=[id,...S.prio];
-  else if(i===0&&S.prio.length>1) S.prio=[...S.prio.slice(1),id];
-  else S.prio=S.prio.filter(x=>x!==id);
-  buildCourts(); updateSum();
+function cycleCourt(id) {
+  const i = S.prio.indexOf(id);
+  if (i===-1) S.prio = [id,...S.prio];
+  else if (i===0&&S.prio.length>1) S.prio = [...S.prio.slice(1),id];
+  else S.prio = S.prio.filter(x=>x!==id);
+  buildCourts(); updateSum(); updateFireBtn();
 }
 
 // ============================================================
 // PARTNERS
 // ============================================================
-function buildPartners(){
-  const c=document.getElementById('plist');c.innerHTML='';
-  PARTNERS.forEach((p,i)=>{
-    const el=document.createElement('div');
-    el.className='pt'+(S.partner===i?' on':'');
-    el.innerHTML='<div class="ptav">'+p.av+'</div><div style="flex:1"><div class="ptname">'+p.name+'</div><div class="ptval">'+(p.val||'sans partenaire')+'</div></div>';
-    el.onclick=()=>{S.partner=i;buildPartners();updateSum();};
+function buildPartners() {
+  const c = document.getElementById('plist'); c.innerHTML = '';
+  PARTNERS.forEach((p,i) => {
+    const el = document.createElement('div');
+    el.className = 'pt'+(S.partner===i?' on':'');
+    el.innerHTML = '<div class="ptav">'+p.av+'</div><div style="flex:1"><div class="ptname">'+p.name+'</div><div class="ptval">'+(p.val||'sans partenaire')+'</div></div>';
+    el.onclick = () => { S.partner=i; buildPartners(); updateSum(); };
     c.appendChild(el);
   });
 }
@@ -677,44 +765,84 @@ function buildPartners(){
 // ============================================================
 // SUMMARY
 // ============================================================
-function updateSum(){
-  const box=document.getElementById('sum');
-  const dv=document.getElementById('tdate').value;
-  if(!dv||!S.slot||!S.connected){box.classList.remove('on');return;}
-  const d=new Date(dv+'T12:00:00');
-  const ds=DAYS[d.getDay()]+' '+d.getDate()+' '+MONTHS[d.getMonth()]+' '+d.getFullYear();
-  const ft=document.getElementById('firetime').value||'23:00';
-  const nextH=p2(parseInt(S.slot)+1);
-  const courts=S.prio.length?S.prio.map((id,i)=>'<b>Court '+(COURTS.find(c=>c.id===id)?.n||id)+'</b>'+(i===0?' P1':' P2')).join(' / '):'<span style="color:var(--muted)">1er libre</span>';
-  box.innerHTML='<b>'+ds+'</b><span class="sep">|</span><b>'+S.slot+'-'+nextH+'h</b><span class="sep">|</span>'+courts+'<br><b>'+PARTNERS[S.partner].name+'</b><span class="sep">|</span>Tir <b>'+ft+'</b><span class="sep">|</span><b>'+document.getElementById('brate').value+' req/s</b>';
-  box.classList.add('on');
+function updateSum() {
+  const box = document.getElementById('sum');
+  if (!S.connected || !S.slot) { box.classList.remove('on'); return; }
+  const dv = getTabDate(S.activeTab);
+  const d = new Date(dv+'T12:00:00');
+  const ds = DAYS[d.getDay()]+' '+d.getDate()+' '+MONTHS[d.getMonth()];
+  const ft = document.getElementById('firetime').value||'23:00';
+  const nextH = p2(parseInt(S.slot)+1);
+  const isSnipe = isJ3(S.activeTab);
+  const courts = S.prio.length
+    ? S.prio.map((id,i)=>'<b>Court '+(COURTS.find(c=>c.id===id)?.n||id)+'</b>'+(i===0?' P1':' P2')).join(' / ')
+    : '<span style="color:var(--muted)">1er libre</span>';
+  box.className = 'sum on'+(isSnipe?' snipe-sum':'');
+  box.innerHTML = (isSnipe?'SNIPER ':'DIRECT ')+
+    '<b>'+ds+'</b><span class="sep">|</span><b>'+S.slot+'-'+nextH+'h</b><span class="sep">|</span>'+courts+
+    '<br><b>'+PARTNERS[S.partner].name+'</b>'+
+    (isSnipe?'<span class="sep">|</span>Tir a <b>'+ft+'</b>':'')+
+    '<span class="sep">|</span><b>'+document.getElementById('brate').value+' req/s</b>';
 }
 
 // ============================================================
-// ARM / DISARM
+// BOUTON FEU - adaptatif selon le mode
 // ============================================================
-function armOrFire(){
-  if(S.firing) return;
-  if(!S.connected){log('Connectez-vous d\'abord.','lw');return;}
-  if(!S.slot){log('Selectionnez un creneau.','lw');return;}
-  if(S.armed){startFire();return;}
-  S.armed=true; S.attempts=0; S.success=false;
-  const ft=document.getElementById('firetime').value||'23:00';
-  setBtn('armed','ARME - TIR A '+ft);
+function updateFireBtn() {
+  const btn = document.getElementById('btnfire');
+  const lbl = document.getElementById('firelbl');
+  if (!S.connected) { btn.className='btn-fire off'; lbl.textContent='CONNECTEZ-VOUS D\'ABORD'; return; }
+  if (!S.slot) { btn.className='btn-fire off'; lbl.textContent='CHOISISSEZ UN CRENEAU'; return; }
+  if (S.firing) return;
+  if (S.armed) return;
+  const isSnipe = isJ3(S.activeTab);
+  if (isSnipe) {
+    const ft = document.getElementById('firetime').value||'23:00';
+    btn.className = 'btn-fire snipe-mode';
+    lbl.textContent = 'ARMER SNIPER - TIR A ' + ft;
+  } else {
+    btn.className = 'btn-fire';
+    lbl.textContent = 'RESERVER MAINTENANT';
+  }
+}
+
+function handleFireBtn() {
+  if (!S.connected || !S.slot) return;
+  if (S.firing) return;
+  if (isJ3(S.activeTab)) {
+    // Mode sniper
+    if (S.armed) { startFire(); return; }
+    armSniper();
+  } else {
+    // Mode direct - tir immediat
+    startFire();
+  }
+}
+
+// ============================================================
+// ARM SNIPER (J+3)
+// ============================================================
+function armSniper() {
+  S.armed = true; S.attempts = 0; S.success = false;
+  const ft = document.getElementById('firetime').value||'23:00';
+  const btn = document.getElementById('btnfire');
+  btn.className = 'btn-fire armed';
+  document.getElementById('firelbl').textContent = 'ARME - TIR A '+ft+' | TAP POUR TIRER';
   document.getElementById('btndis').classList.add('on');
-  const sa=document.getElementById('sbatt');sa.style.display='flex';
-  document.getElementById('attn').textContent='0';
-  setDot('armed','Arme - '+ft+':00');
-  const d=new Date(document.getElementById('tdate').value+'T12:00:00');
-  log('Arme - '+DAYS[d.getDay()]+' '+d.getDate()+' a '+S.slot,'lw');
-  S.prio.length&&log('Courts: '+S.prio.map(id=>'C'+(COURTS.find(c=>c.id===id)?.n||id)).join('>'), 'li');
+  const sa = document.getElementById('sbatt'); sa.style.display='flex'; document.getElementById('attn').textContent='0';
+  setDot('armed','Arme - declenchement a '+ft+':00');
+  const dv = getTabDate(S.activeTab);
+  const d = new Date(dv+'T12:00:00');
+  log('ARME - '+DAYS[d.getDay()]+' '+d.getDate()+' '+MONTHS[d.getMonth()]+' a '+S.slot,'lw');
+  S.prio.length && log('Courts: '+S.prio.map(id=>'C'+(COURTS.find(c=>c.id===id)?.n||id)).join('>'), 'li');
   log('Partenaire: '+PARTNERS[S.partner].name,'li');
 }
 
-function disarm(){
+function disarm() {
   clearInterval(S.iv); S.armed=false; S.firing=false;
-  setBtn('','ARMER LE SNIPER');
+  updateFireBtn();
   document.getElementById('btndis').classList.remove('on');
+  document.getElementById('sbatt').style.display='none';
   setDot('ok','Desarme');
   log('Desarme.','lw');
 }
@@ -722,189 +850,136 @@ function disarm(){
 // ============================================================
 // FIRING
 // ============================================================
-async function startFire(){
-  if(S.firing) return;
-  S.firing=true;
-  setBtn('firing','FEU EN COURS...');
+async function startFire() {
+  if (S.firing) return;
+  S.firing = true;
+  const btn = document.getElementById('btnfire');
+  btn.className = 'btn-fire firing';
+  document.getElementById('firelbl').textContent = 'FEU EN COURS...';
   setDot('firing','Rafale active');
-  log('DECLENCHEMENT - Re-login...','lw');
 
-  const ok=await doLogin(true);
-  if(!ok){log('Echec re-login.','ler');endFire(false);return;}
+  const isSnipe = isJ3(S.activeTab);
+  log((isSnipe?'SNIPER ':'DIRECT ')+'- Re-login...','lw');
+
+  const ok = await doLogin(true);
+  if (!ok) { log('Echec re-login.','ler'); endFire(false); return; }
   log('Connecte ! Rafale...','lok');
 
-  const rps=parseInt(document.getElementById('brate').value);
-  const dur=parseInt(document.getElementById('bdur').value)*1000;
-  const stop=document.getElementById('stopok').value==='1';
-  const ivl=Math.max(50,Math.floor(1000/rps));
-  const t0=Date.now();
-  let ap=[...S.prio];
-  if(!ap.length) ap=COURTS.filter(c=>S.courtStatus[c.id]?.free!==false&&!S.courtStatus[c.id]?.maint).map(c=>c.id);
-  if(!ap.length) ap=COURTS.map(c=>c.id);
+  const rps = parseInt(document.getElementById('brate').value);
+  const dur = parseInt(document.getElementById('bdur').value)*1000;
+  const stop = document.getElementById('stopok').value==='1';
+  const ivl = Math.max(50, Math.floor(1000/rps));
+  const t0 = Date.now();
 
-  S.iv=setInterval(async()=>{
-    if(S.success&&stop){endFire(true);return;}
-    if(Date.now()-t0>dur){endFire(false);return;}
+  // Construire liste terrains prioritaires
+  const dv = getTabDate(S.activeTab);
+  const grid = S.grids[dv];
+  let ap = [...S.prio];
+  if (!ap.length) ap = COURTS.filter(c=>grid?.courtStatus[c.id]?.free!==false&&!grid?.courtStatus[c.id]?.maint).map(c=>c.id);
+  if (!ap.length) ap = COURTS.map(c=>c.id);
+
+  S.iv = setInterval(async () => {
+    if (S.success&&stop) { endFire(true); return; }
+    if (Date.now()-t0>dur) { endFire(false); return; }
     S.attempts++;
-    document.getElementById('attn').textContent=S.attempts;
-    const cid=ap[0];
-    const r=await sendResa(cid);
-    if(r.ok){
-      S.success=true;
-      log('RESERVE ! Court '+(COURTS.find(c=>c.id===cid)?.n)+'  #'+S.attempts,'lok');
-      if(PARTNERS[S.partner].val) await confPartner();
+    document.getElementById('attn').textContent = S.attempts;
+    const cid = ap[0];
+    const r = await sendResa(cid);
+    if (r.ok) {
+      S.success = true;
+      log('RESERVE ! Court '+(COURTS.find(c=>c.id===cid)?.n)+' #'+S.attempts,'lok');
+      if (PARTNERS[S.partner].val) await confPartner();
       await confFinal();
-      if(stop) endFire(true);
+      if (stop) endFire(true);
     } else {
-      if(r.pris&&ap.length>1){
-        log('Court '+(COURTS.find(c=>c.id===ap[0])?.n)+' pris > rotation','lw');
-        ap.shift();
-      }
-      if(S.attempts<=5||S.attempts%25===0) log('#'+S.attempts+' '+r.err,'ler');
+      if (r.pris&&ap.length>1) { log('Court '+(COURTS.find(c=>c.id===ap[0])?.n)+' pris > rotation','lw'); ap.shift(); }
+      if (S.attempts<=5||S.attempts%25===0) log('#'+S.attempts+' '+r.err,'ler');
     }
-  },ivl);
+  }, ivl);
 }
 
-function endFire(ok){
+function endFire(ok) {
   clearInterval(S.iv); S.firing=false; S.armed=false;
   document.getElementById('btndis').classList.remove('on');
-  if(ok){
-    setBtn('ok','RESERVE ! '+S.attempts+' tentative(s)');
+  if (ok) {
+    document.getElementById('btnfire').className='btn-fire ok';
+    document.getElementById('firelbl').textContent='RESERVE ! '+S.attempts+' tentative(s)';
     setDot('ok','Confirme ('+S.attempts+')');
   } else {
-    setBtn('','ARMER LE SNIPER');
-    setDot('ok', S.success?'Reserve':'Echec '+S.attempts+' tentatives');
-    if(!S.success) log('Echec apres '+S.attempts+' tentatives.','ler');
+    updateFireBtn();
+    setDot('ok',S.success?'Reserve':'Echec '+S.attempts+' tentatives');
+    if (!S.success) log('Echec apres '+S.attempts+' tentatives.','ler');
   }
 }
 
 // ============================================================
-// LOGIN via proxy CORS
-// Gestion manuelle du cookie de session (PHPSESSID)
+// HTTP
 // ============================================================
-async function doLogin(silent){
-  const lg=document.getElementById('login').value.trim();
-  const pw=document.getElementById('pwd').value.trim();
+async function doLogin(silent) {
+  const lg = document.getElementById('login').value.trim();
+  const pw = document.getElementById('pwd').value.trim();
   try {
-    // 1. Init session club
-    const r1=await pfetch(START+'?club='+CLUB);
-    // Recuperer cookie depuis headers si disponible
-    const setCookie=r1.headers.get('set-cookie')||'';
-    const sessMatch=setCookie.match(/PHPSESSID=([^;]+)/);
-    if(sessMatch) SESSION_COOKIE='PHPSESSID='+sessMatch[1];
-
-    // 2. POST club
-    await pfetchWithSession(BASE, {
-      method:'POST',
-      headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body:'club='+CLUB
-    });
-
-    // 3. GET page login
-    const r3=await pfetchWithSession(BASE);
-    const page=await r3.text();
-
-    // Recuperer cookie si pas encore
-    if(!SESSION_COOKIE){
-      const sc2=r3.headers.get('set-cookie')||'';
-      const sm2=sc2.match(/PHPSESSID=([^;]+)/);
-      if(sm2) SESSION_COOKIE='PHPSESSID='+sm2[1];
-    }
-
-    // Extraire champs obfusques
-    const excl=new Set(['idact','idpge','idses','usermd5','idgfcmiid','largeur_ecran','hauteur_ecran','pingmax','pingmin','userid','userkey']);
-    const fields=[...page.matchAll(/name="([a-z]{14,24})"/gi)].map(m=>m[1]).filter(f=>!excl.has(f));
+    await pfetch(START+'?club='+CLUB);
+    await pfetch(BASE,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'club='+CLUB});
+    const r3 = await pfetch(BASE);
+    const page = await r3.text();
+    const excl = new Set(['idact','idpge','idses','usermd5','idgfcmiid','largeur_ecran','hauteur_ecran','pingmax','pingmin','userid','userkey']);
+    const fields = [...page.matchAll(/name="([a-z]{14,24})"/gi)].map(m=>m[1]).filter(f=>!excl.has(f));
     const hf=fields[0]||'msefyrseikuavettedia';
     const lf=fields[1]||'rpydihueaypsad';
     const pf=fields[2]||'fyksnurseouetjar';
-    const hash=md5(pw.toUpperCase()+lg.toUpperCase());
-    const idpge=(page.match(/name="idpge"\s+value="([^"]+)"/)||['','101-'+Date.now()])[1];
-
+    const hash = md5(pw.toUpperCase()+lg.toUpperCase());
+    const idpge = (page.match(/name="idpge"\s+value="([^"]+)"/)||['','101-'+Date.now()])[1];
     if(!silent) log('Hash: '+hash.slice(0,8)+'... Champs: '+hf.slice(0,6)+'...','ld');
-
     const body='idact=101&idpge='+idpge+'&usermd5=&'+hf+'='+hash+'&idgfcmiid=0&largeur_ecran=390&hauteur_ecran=844&pingmax=16&pingmin=16&userid=&userkey=&'+lf+'='+encodeURIComponent(lg)+'&'+pf+'=';
-
-    const r4=await pfetchWithSession(BASE, {
-      method:'POST',
-      headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body
-    });
-    const txt=await r4.text();
-
-    // Recuperer nouveau cookie apres login
-    const sc4=r4.headers.get('set-cookie')||'';
-    const sm4=sc4.match(/PHPSESSID=([^;]+)/);
-    if(sm4) SESSION_COOKIE='PHPSESSID='+sm4[1];
-
-    if(SESSION_COOKIE&&!silent) log('Session: '+SESSION_COOKIE.slice(0,20)+'...','ld');
-
-    const ok=txt.includes('idact=328')||txt.includes('CHAMP_SELECTEUR')||
-              txt.includes('reservation')||(!txt.includes('mot de passe')&&txt.length>500);
-
-    if(!silent&&ok) log('Login reussi !','lok');
-    if(!silent&&!ok) log('Reponse inattendue ('+txt.length+' octets)','lw');
+    const r4 = await pfetch(BASE,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body});
+    const txt = await r4.text();
+    const ok = txt.includes('idact=328')||txt.includes('CHAMP_SELECTEUR')||txt.includes('reservation')||(!txt.includes('mot de passe')&&txt.length>500);
+    if(!silent&&ok) log('Login OK','lok');
     return ok;
-  } catch(e){
+  } catch(e) {
     if(!silent) log('Erreur: '+e.message.slice(0,60),'ler');
     return false;
   }
 }
 
-// ============================================================
-// RESERVATION
-// ============================================================
-async function sendResa(cid){
-  try{
-    const dv=document.getElementById('tdate').value;
-    const cj=encodeURIComponent(ddfr(dv)+' '+dayname(dv));
+async function sendResa(cid) {
+  try {
+    const dv = getTabDate(S.activeTab);
+    const cj = encodeURIComponent(ddfr(dv)+' '+dayname(dv));
     const[h,m]=S.slot.split(':').map(Number);
-    const sc=h*2+(m>=30?1:0);
-    const rand=Math.floor(Math.random()*99999999999999);
-    const idpar=PARTNERS[S.partner].val?PARTNERS[S.partner].val.replace('-',''):'';
-    const body='idact=336&idpge=210-'+rand+'&IDOBJ='+sc+'_0_'+cid+'&idses=S0&idcrt='+cid+
+    const sc = h*2+(m>=30?1:0);
+    const rand = Math.floor(Math.random()*99999999999999);
+    const idpar = PARTNERS[S.partner].val?PARTNERS[S.partner].val.replace('-',''):'';
+    const body = 'idact=336&idpge=210-'+rand+'&IDOBJ='+sc+'_0_'+cid+'&idses=S0&idcrt='+cid+
       '&idpro=&idpar='+idpar+'&pw=60&dj=2&userid=&usermd5=&club=&B_MOJJO=0'+
       '&LISTE_RESA_BOURSE_DATE_JEU=&LISTE_RESA_BOURSE_HEURE_JEU=&LISTE_RESA_BOURSE_COURT_JEU='+
       '&CHAMP_SELECTEUR_JEU=1&ID_TABLEAU=1%7C'+CLUB+'%7C1&CHAMP_SELECTEUR_JOUR='+cj+'&nc=60';
-    const r=await pfetchWithSession(BASE,{
-      method:'POST',
-      headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body
-    });
-    const txt=await r.text();
+    const r = await pfetch(BASE,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body});
+    const txt = await r.text();
     if(/confirm|valid|succes/i.test(txt)||txt.includes('idact=332')||txt.includes('partenaire')) return{ok:true};
-    if(/indisponible|occup|pris|taken/i.test(txt)) return{ok:false,pris:true,err:'Court pris'};
+    if(/indisponible|occup|pris|taken/i.test(txt)) return{ok:false,pris:true,err:'Pris'};
     return{ok:false,err:'HTTP '+r.status};
-  }catch(e){return{ok:false,err:e.message.slice(0,30)};}
+  } catch(e) { return{ok:false,err:e.message.slice(0,30)}; }
 }
 
-async function confPartner(){
-  const p=PARTNERS[S.partner];if(!p.val)return;
+async function confPartner() {
+  const p=PARTNERS[S.partner]; if(!p.val) return;
   const v=p.val.replace('-','');
   const rand=Math.floor(Math.random()*99999999999999);
-  await pfetchWithSession(BASE,{
-    method:'POST',
-    headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:'idact=332&idpge=330-'+rand+'&IDOBJ='+v+'&IDREF=&idtpa=&idpar='+v+'&rcout=&b_i=0&idses=S0&CHAMP_TYPE_1='+p.val
-  }).catch(()=>{});
+  await pfetch(BASE,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:'idact=332&idpge=330-'+rand+'&IDOBJ='+v+'&IDREF=&idtpa=&idpar='+v+'&rcout=&b_i=0&idses=S0&CHAMP_TYPE_1='+p.val}).catch(()=>{});
 }
 
-async function confFinal(){
+async function confFinal() {
   const rand=Math.floor(Math.random()*99999999999999);
-  await pfetchWithSession(BASE,{
-    method:'POST',
-    headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:'idact=366&idpge=330-'+rand+'&IDOBJ=&IDREF=&idtpa=&idpar=&rcout=&b_i=0&idses=S0'
-  }).catch(()=>{});
+  await pfetch(BASE,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:'idact=366&idpge=330-'+rand+'&IDOBJ=&IDREF=&idtpa=&idpar=&rcout=&b_i=0&idses=S0'}).catch(()=>{});
 }
 
 // ============================================================
 // UTILS
 // ============================================================
-function setBtn(cls,lbl){
-  const b=document.getElementById('btnfire');
-  b.className='btn-fire'+(cls?' '+cls:'');
-  document.getElementById('firelbl').textContent=lbl;
-}
 function setDot(cls,msg){
   document.getElementById('dot').className='dot'+(cls?' '+cls:'');
   document.getElementById('sbmsg').textContent=msg;
@@ -920,7 +995,7 @@ function log(msg,type){
 function p2(n){return String(n).padStart(2,'0')}
 
 // ============================================================
-// MD5 - verifie: MD5("K@SJMXRM+Q9TOLVIDE") = ac43d1bea80c8ce2822dc23d5d32076c
+// MD5
 // ============================================================
 function md5(s){
   function sa(x,y){var l=(x&65535)+(y&65535);return((x>>16)+(y>>16)+(l>>16)<<16)|(l&65535)}
@@ -961,6 +1036,5 @@ function md5(s){
 
 init();
 </script>
-
 </body>
 </html>
