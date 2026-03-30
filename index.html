@@ -23,7 +23,7 @@
 html,body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;min-height:100%}
 .wrap{max-width:460px;margin:0 auto;padding:16px 13px 100px}
 
-.hdr{text-align:center;padding:6px 0 16px}
+.hdr{text-align:center;padding:6px 0 14px}
 .logo{font-family:‘Bebas Neue’,sans-serif;font-size:50px;letter-spacing:8px;line-height:1;
 background:linear-gradient(135deg,var(–green),#00c2ff);
 -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -64,94 +64,76 @@ outline:none;-webkit-appearance:none;appearance:none}
 .field input[type=time]{color-scheme:dark}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 
-/* CONNECT PANEL */
-.connect-panel{background:var(–card2);border:1px solid var(–line);border-radius:10px;
-padding:12px;margin-bottom:10px}
-.connect-steps{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+/* CONNEXION */
+.conn-steps{display:flex;flex-direction:column;gap:9px;margin-bottom:12px;
+background:var(–card2);border-radius:10px;padding:12px}
 .cstep{display:flex;align-items:flex-start;gap:10px}
-.cstep-num{width:22px;height:22px;border-radius:50%;border:1px solid var(–muted);
-display:flex;align-items:center;justify-content:center;font-size:10px;color:var(–muted);flex-shrink:0;margin-top:1px}
-.cstep-num.done{border-color:var(–green);color:var(–green);background:var(–gbg)}
-.cstep-num.active{border-color:var(–amber);color:var(–amber);background:var(–abg)}
-.cstep-txt{font-size:11px;color:var(–muted);line-height:1.5}
-.cstep-txt b{color:var(–text)}
-.cstep-txt .ok{color:var(–green)}
-.cstep-txt .warn{color:var(–amber)}
-.cstep-txt .err{color:var(–red)}
+.csn{width:22px;height:22px;border-radius:50%;border:1px solid var(–muted2);
+display:flex;align-items:center;justify-content:center;font-size:10px;color:var(–muted2);flex-shrink:0;margin-top:1px}
+.csn.active{border-color:var(–amber);color:var(–amber);background:var(–abg)}
+.csn.done{border-color:var(–green);color:var(–green);background:var(–gbg)}
+.cstxt{font-size:11px;color:var(–muted);line-height:1.5}
+.cstxt b{color:var(–text)}
 
-/* IFRAME WINDOW */
-.iframe-window{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.85);
-flex-direction:column;align-items:center;justify-content:flex-start;padding:20px 10px 10px}
-.iframe-window.show{display:flex}
-.iframe-bar{width:100%;max-width:460px;background:var(–card);border:1px solid var(–line);
-border-radius:12px 12px 0 0;padding:10px 14px;display:flex;align-items:center;gap:8px}
-.iframe-url{flex:1;font-size:10px;color:var(–muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.iframe-close{background:var(–red);border:none;border-radius:6px;color:#fff;
-font-family:‘DM Mono’,monospace;font-size:10px;padding:5px 10px;cursor:pointer;white-space:nowrap}
-.iframe-status{font-size:9px;color:var(–amber);padding:4px 14px;background:var(–card);
-border-left:1px solid var(–line);border-right:1px solid var(–line);
-width:100%;max-width:460px;text-align:center}
-iframe#siteFrame{width:100%;max-width:460px;height:calc(100vh - 130px);
-border:1px solid var(–line);border-radius:0 0 12px 12px;background:#fff}
-
-.btn-connect{width:100%;padding:12px;border-radius:10px;font-family:‘Bebas Neue’,sans-serif;
-font-size:19px;letter-spacing:3px;cursor:pointer;transition:all .2s;
-border:2px solid var(–blue);background:var(–bbg);color:var(–blue)}
-.btn-connect:active{background:var(–blue);color:#000}
-.btn-connect.loading{border-color:var(–amber);color:var(–amber)}
-.btn-connect.done{border-color:var(–green);background:var(–gbg);color:var(–green)}
-.btn-connect.step2{border-color:var(–green);background:var(–gbg);color:var(–green)}
+.btn-big{width:100%;padding:12px;border-radius:10px;font-family:‘Bebas Neue’,sans-serif;
+font-size:18px;letter-spacing:3px;cursor:pointer;transition:all .18s;margin-bottom:8px}
+.btn-open{border:2px solid var(–blue);background:var(–bbg);color:var(–blue)}
+.btn-open:active{background:var(–blue);color:#000}
+.btn-confirm{border:2px solid var(–green);background:var(–gbg);color:var(–green);display:none}
+.btn-confirm:active{background:var(–green);color:#000}
+.btn-confirm.show{display:block}
+.btn-done{border:2px solid var(–green);background:var(–gbg);color:var(–green)}
 
 /* TABS */
 .tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:10px}
 .tab{background:var(–card);border:1px solid var(–line);border-radius:10px;
 padding:8px 4px;text-align:center;cursor:pointer;transition:all .15s;position:relative}
-.tab-label{font-size:8px;letter-spacing:2px;color:var(–muted);text-transform:uppercase}
+.tab-lbl{font-size:8px;letter-spacing:2px;color:var(–muted);text-transform:uppercase}
 .tab-day{font-family:‘Bebas Neue’,sans-serif;font-size:16px;letter-spacing:1px;color:var(–text);margin-top:1px}
-.tab-date{font-size:9px;color:var(–muted);margin-top:1px}
-.tab-badge{position:absolute;top:4px;right:5px;font-size:7px;font-weight:700;
-padding:1px 4px;border-radius:3px;letter-spacing:.5px}
-.tb-open{background:rgba(13,255,140,.25);color:var(–green)}
-.tb-snipe{background:rgba(255,204,0,.25);color:var(–amber)}
-.tab.sel-open{background:var(–gbg);border-color:var(–green)}
-.tab.sel-open .tab-label,.tab.sel-open .tab-day,.tab.sel-open .tab-date{color:var(–green)}
-.tab.sel-snipe{background:var(–abg);border-color:var(–amber)}
-.tab.sel-snipe .tab-label,.tab.sel-snipe .tab-day,.tab.sel-snipe .tab-date{color:var(–amber)}
+.tab-dt{font-size:9px;color:var(–muted);margin-top:1px}
+.tab-badge{position:absolute;top:4px;right:5px;font-size:7px;font-weight:700;padding:1px 4px;border-radius:3px}
+.tb-o{background:rgba(13,255,140,.25);color:var(–green)}
+.tb-s{background:rgba(255,204,0,.25);color:var(–amber)}
+.tab.so{background:var(–gbg);border-color:var(–green)}
+.tab.so .tab-lbl,.tab.so .tab-day,.tab.so .tab-dt{color:var(–green)}
+.tab.ss{background:var(–abg);border-color:var(–amber)}
+.tab.ss .tab-lbl,.tab.ss .tab-day,.tab.ss .tab-dt{color:var(–amber)}
 
-.mode-badge{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:9px;
-font-size:11px;margin-bottom:9px;font-weight:500}
-.mode-badge.open{background:var(–gbg);border:1px solid var(–green);color:var(–green)}
-.mode-badge.snipe{background:var(–abg);border:1px solid var(–amber);color:var(–amber)}
+.modebadge{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:9px;font-size:11px;margin-bottom:9px}
+.mb-open{background:var(–gbg);border:1px solid var(–green);color:var(–green)}
+.mb-snipe{background:var(–abg);border:1px solid var(–amber);color:var(–amber)}
 
-.slots1h{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+/* SLOTS */
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
 .sl{padding:9px 3px;background:var(–card2);border:1px solid var(–line);border-radius:7px;
 color:var(–muted);font-size:11px;cursor:pointer;text-align:center;transition:all .12s;position:relative}
 .sl.on{background:var(–gbg);border-color:var(–green);color:var(–green);font-weight:500}
-.sl.on-snipe{background:var(–abg);border-color:var(–amber);color:var(–amber);font-weight:500}
-.sl.blocked{opacity:.28;cursor:not-allowed;background:var(–rbg);border-color:rgba(255,45,85,.3)}
+.sl.ons{background:var(–abg);border-color:var(–amber);color:var(–amber);font-weight:500}
+.sl.blocked{opacity:.25;cursor:not-allowed;background:var(–rbg);border-color:rgba(255,45,85,.2)}
 .sl.partial{border-color:var(–amber);color:var(–amber)}
-.sl-dot{width:5px;height:5px;border-radius:50%;position:absolute;top:3px;right:3px}
-.sl-dot.taken{background:var(–red)}.sl-dot.partial{background:var(–amber)}
+.sld{width:5px;height:5px;border-radius:50%;position:absolute;top:3px;right:3px}
+.sld.t{background:var(–red)}.sld.p{background:var(–amber)}
 
-.courts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px}
+/* COURTS */
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px}
 .ct{background:var(–card2);border:1px solid var(–line);border-radius:11px;
 padding:11px 6px;cursor:pointer;transition:all .15s;position:relative;text-align:center}
 .ct.p1{background:var(–abg);border-color:var(–amber)}
 .ct.p2{background:var(–gbg);border-color:var(–green)}
-.ct.na{opacity:.28;cursor:not-allowed;background:var(–rbg);border-color:rgba(255,45,85,.3)}
-.ct.maint{opacity:.22;cursor:not-allowed;background:var(–grbg);border-color:rgba(136,138,170,.3)}
-.ct.preview-na{opacity:.35;cursor:not-allowed;background:var(–rbg);border-color:rgba(255,45,85,.25)}
-.ct-n{font-family:‘Bebas Neue’,sans-serif;font-size:24px;letter-spacing:1px;line-height:1}
-.ct-sub{font-size:8px;letter-spacing:1px;color:var(–muted);text-transform:uppercase;margin-top:2px}
-.ct-badge{position:absolute;top:4px;right:4px;font-size:7px;font-weight:700;
-letter-spacing:.5px;padding:1px 4px;border-radius:3px}
+.ct.na{opacity:.25;cursor:not-allowed;background:var(–rbg);border-color:rgba(255,45,85,.2)}
+.ct.maint{opacity:.2;cursor:not-allowed;background:var(–grbg);border-color:rgba(136,138,170,.2)}
+.ct.pna{opacity:.3;cursor:not-allowed;background:var(–rbg);border-color:rgba(255,45,85,.2)}
+.ctn{font-family:‘Bebas Neue’,sans-serif;font-size:24px;letter-spacing:1px;line-height:1}
+.cts{font-size:8px;letter-spacing:1px;color:var(–muted);text-transform:uppercase;margin-top:2px}
+.ctb{position:absolute;top:4px;right:4px;font-size:7px;font-weight:700;letter-spacing:.5px;padding:1px 4px;border-radius:3px}
 .bp1{background:var(–amber);color:#000}.bp2{background:rgba(13,255,140,.3);color:var(–green)}
 .bna{background:rgba(255,45,85,.3);color:var(–red)}.bm{background:rgba(136,138,170,.3);color:var(–grey)}
 
 .legend{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px;font-size:9px;color:var(–muted)}
-.lg-item{display:flex;align-items:center;gap:4px}
-.lg-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+.lgi{display:flex;align-items:center;gap:4px}
+.lgd{width:8px;height:8px;border-radius:2px;flex-shrink:0}
 
+/* PARTNERS */
 .pts{display:flex;flex-direction:column;gap:5px}
 .pt{display:flex;align-items:center;gap:9px;background:var(–card2);border:1px solid var(–line);
 border-radius:9px;padding:8px 11px;cursor:pointer;transition:all .15s}
@@ -160,8 +142,8 @@ border-radius:9px;padding:8px 11px;cursor:pointer;transition:all .15s}
 display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;
 font-family:‘Bebas Neue’,sans-serif;letter-spacing:1px;color:var(–muted)}
 .pt.on .ptav{background:rgba(13,255,140,.2);color:var(–green)}
-.ptname{font-size:12px;font-weight:500;flex:1}
-.ptval{font-size:9px;color:var(–muted);letter-spacing:1px}
+.ptn{font-size:12px;font-weight:500;flex:1}
+.ptv{font-size:9px;color:var(–muted);letter-spacing:1px}
 
 .brow{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 input[type=range]{flex:1;-webkit-appearance:none;height:3px;background:var(–line);border-radius:2px;outline:none}
@@ -170,37 +152,35 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
 
 .sum{background:rgba(13,255,140,.05);border:1px solid rgba(13,255,140,.2);border-radius:11px;
 padding:10px 13px;font-size:11px;color:var(–muted);line-height:2.1;margin-bottom:9px;display:none}
-.sum.on{display:block}
-.sum.snipe-sum{background:rgba(255,204,0,.05);border-color:rgba(255,204,0,.2)}
-.sum b{color:var(–green)}.sum.snipe-sum b{color:var(–amber)}
+.sum.on{display:block}.sum.ss{background:rgba(255,204,0,.05);border-color:rgba(255,204,0,.2)}
+.sum b{color:var(–green)}.sum.ss b{color:var(–amber)}
 .sep{color:var(–line);margin:0 4px}
 .note{font-size:10px;color:var(–muted);line-height:1.6;padding:6px 10px;margin-top:8px;
 background:rgba(255,204,0,.04);border-left:2px solid rgba(255,204,0,.25);border-radius:0 5px 5px 0}
 
-.btn-fire{width:100%;padding:17px;border-radius:13px;font-family:‘Bebas Neue’,sans-serif;
+.btnfire{width:100%;padding:17px;border-radius:13px;font-family:‘Bebas Neue’,sans-serif;
 font-size:22px;letter-spacing:4px;cursor:pointer;transition:all .18s;
 border:2px solid var(–green);background:transparent;color:var(–green);position:relative;overflow:hidden}
-.btn-fire::before{content:’’;position:absolute;inset:0;background:var(–green);
+.btnfire::before{content:’’;position:absolute;inset:0;background:var(–green);
 transform:scaleX(0);transform-origin:left;transition:transform .18s}
-.btn-fire:active::before{transform:scaleX(1)}
-.btn-fire:active{color:#000}
-.btn-fire span{position:relative;z-index:1}
-.btn-fire.off{border-color:var(–muted);color:var(–muted);pointer-events:none}
-.btn-fire.snipe-mode{border-color:var(–amber);color:var(–amber)}
-.btn-fire.snipe-mode::before{background:var(–amber)}
-.btn-fire.armed{border-color:var(–amber);color:var(–amber);animation:pulse-border 1.5s infinite}
-.btn-fire.armed::before{background:var(–amber)}
-@keyframes pulse-border{0%,100%{box-shadow:0 0 0 0 rgba(255,204,0,.4)}50%{box-shadow:0 0 0 8px rgba(255,204,0,0)}}
-.btn-fire.firing{border-color:var(–red);animation:shk .08s infinite}
-.btn-fire.firing::before{background:var(–red);transform:scaleX(1)}
-.btn-fire.firing span{color:#fff!important}
-.btn-fire.ok::before{background:var(–green);transform:scaleX(1)}
-.btn-fire.ok span{color:#000!important}
+.btnfire:active::before{transform:scaleX(1)}
+.btnfire:active{color:#000}
+.btnfire span{position:relative;z-index:1}
+.btnfire.off{border-color:var(–muted);color:var(–muted);pointer-events:none}
+.btnfire.sm{border-color:var(–amber);color:var(–amber)}
+.btnfire.sm::before{background:var(–amber)}
+.btnfire.armed{border-color:var(–amber);color:var(–amber);animation:pb 1.5s infinite}
+.btnfire.armed::before{background:var(–amber)}
+@keyframes pb{0%,100%{box-shadow:0 0 0 0 rgba(255,204,0,.4)}50%{box-shadow:0 0 0 8px rgba(255,204,0,0)}}
+.btnfire.firing{border-color:var(–red);animation:shk .08s infinite}
+.btnfire.firing::before{background:var(–red);transform:scaleX(1)}
+.btnfire.firing span,.btnfire.ok span{color:#000!important}
+.btnfire.ok::before{background:var(–green);transform:scaleX(1)}
 @keyframes shk{33%{transform:translateX(-2px)}66%{transform:translateX(2px)}}
-.btn-dis{width:100%;margin-top:6px;padding:8px;background:none;border:1px solid var(–line);
+.btndis{width:100%;margin-top:6px;padding:8px;background:none;border:1px solid var(–line);
 border-radius:8px;color:var(–muted);font-family:‘DM Mono’,monospace;font-size:10px;cursor:pointer;display:none}
-.btn-dis.on{display:block}
-.btn-dis:active{border-color:var(–red);color:var(–red)}
+.btndis.on{display:block}
+.btndis:active{border-color:var(–red);color:var(–red)}
 
 .logwrap{background:var(–card);border:1px solid var(–line);border-radius:12px;overflow:hidden;margin-top:9px}
 .loghd{background:var(–card2);border-bottom:1px solid var(–line);padding:8px 12px;
@@ -216,18 +196,6 @@ display:flex;justify-content:space-between;align-items:center}
 
 </head>
 <body>
-
-<!-- IFRAME WINDOW (popup plein ecran) -->
-
-<div class="iframe-window" id="iframeWindow">
-  <div class="iframe-bar">
-    <span class="iframe-url" id="iframeUrl">premier-service.fr</span>
-    <button class="iframe-close" onclick="closeIframe()">Fermer X</button>
-  </div>
-  <div class="iframe-status" id="iframeStatus">Chargement...</div>
-  <iframe id="siteFrame" src="about:blank" sandbox="allow-scripts allow-forms allow-same-origin allow-top-navigation"></iframe>
-</div>
-
 <div class="wrap">
 
 <div class="hdr">
@@ -257,60 +225,43 @@ display:flex;justify-content:space-between;align-items:center}
   <span class="sbatt" id="sbatt">Tentatives : <b id="attn">0</b></span>
 </div>
 
-<!-- ETAPE 1 : CONNEXION -->
+<!-- ETAPE 1 -->
 
 <div class="card">
-  <div class="ctitle">1 &mdash; Connexion au site</div>
-
-  <div class="connect-panel">
-    <div class="connect-steps">
-      <div class="cstep">
-        <div class="cstep-num active" id="cs1">1</div>
-        <div class="cstep-txt" id="ct1"><b>Cliquez "Ouvrir le site"</b><br>Le site s'ouvre dans une fenetre integree.</div>
-      </div>
-      <div class="cstep">
-        <div class="cstep-num" id="cs2">2</div>
-        <div class="cstep-txt" id="ct2">Connectez-vous avec vos identifiants dans la fenetre.</div>
-      </div>
-      <div class="cstep">
-        <div class="cstep-num" id="cs3">3</div>
-        <div class="cstep-txt" id="ct3">Revenez ici et cliquez "Connexion etablie".</div>
-      </div>
+  <div class="ctitle">1 &mdash; Connexion</div>
+  <div class="conn-steps">
+    <div class="cstep">
+      <div class="csn active" id="cs1">1</div>
+      <div class="cstxt" id="ct1"><b>Ouvrez premier-service.fr</b> dans un nouvel onglet Chrome et connectez-vous.</div>
     </div>
-
-```
-<button class="btn-connect" id="btnOpen" onclick="openSite()">
-  OUVRIR LE SITE PREMIER SERVICE
-</button>
-<button class="btn-connect step2" id="btnDone" onclick="confirmLogin()" style="display:none;margin-top:8px">
-  CONNEXION ETABLIE - CHARGER LES GRILLES
-</button>
-```
-
+    <div class="cstep">
+      <div class="csn" id="cs2">2</div>
+      <div class="cstxt" id="ct2">Revenez sur cet onglet et cliquez <b>"Connexion etablie"</b>.</div>
+    </div>
   </div>
-
-  <div class="field"><label>Heure de tir sniper</label>
+  <button class="btn-big btn-open" onclick="openSite()">OUVRIR PREMIER-SERVICE.FR</button>
+  <button class="btn-big btn-confirm" id="btnConfirm" onclick="confirmAndLoad()">CONNEXION ETABLIE - CHARGER</button>
+  <div class="field" style="margin-top:4px"><label>Heure de tir sniper</label>
     <input type="time" id="firetime" value="23:00">
   </div>
 </div>
 
-<!-- ONGLETS -->
+<!-- TABS -->
 
 <div class="tabs" id="tabsRow" style="opacity:.4;pointer-events:none"></div>
 
-<!-- MODE BADGE -->
+<!-- MODE -->
 
-<div class="mode-badge open" id="modeBadge" style="display:none">
-  <span id="modeIcon">&#x1F7E2;</span>
-  <span id="modeText">Choisissez un onglet</span>
+<div class="modebadge mb-open" id="modebadge" style="display:none">
+  <span id="modeicon"></span><span id="modetxt">Choisissez un onglet</span>
 </div>
 
 <!-- CRENEAUX -->
 
 <div class="card" id="card-slot" style="opacity:.4;pointer-events:none">
   <div class="ctitle">2 &mdash; Creneau (1h)</div>
-  <div class="slots1h" id="slotsgrid"></div>
-  <div class="note" id="slotnote">Selectionnez une date d'abord.</div>
+  <div class="slots" id="slotsgrid"></div>
+  <div class="note" id="slotnote">Connectez-vous d'abord.</div>
 </div>
 
 <!-- TERRAINS -->
@@ -318,12 +269,12 @@ display:flex;justify-content:space-between;align-items:center}
 <div class="card" id="card-courts" style="opacity:.4;pointer-events:none">
   <div class="ctitle">3 &mdash; Terrains</div>
   <div id="gridmsg" style="font-size:10px;color:var(--muted);margin-bottom:8px">Connectez-vous d'abord.</div>
-  <div class="courts-grid" id="courtsgrid"></div>
+  <div class="cgrid" id="cgrid"></div>
   <div class="legend">
-    <div class="lg-item"><div class="lg-dot" style="background:var(--amber)"></div>Priorite 1</div>
-    <div class="lg-item"><div class="lg-dot" style="background:var(--green)"></div>Alternatif</div>
-    <div class="lg-item"><div class="lg-dot" style="background:var(--red)"></div>Pris/Prof</div>
-    <div class="lg-item"><div class="lg-dot" style="background:var(--grey)"></div>Maintenance</div>
+    <div class="lgi"><div class="lgd" style="background:var(--amber)"></div>Priorite 1</div>
+    <div class="lgi"><div class="lgd" style="background:var(--green)"></div>Alternatif</div>
+    <div class="lgi"><div class="lgd" style="background:var(--red)"></div>Pris/Prof</div>
+    <div class="lgi"><div class="lgd" style="background:var(--grey)"></div>Maintenance</div>
   </div>
   <div class="note">1 tap = Priorite &bull; 2 taps = Alternatif &bull; 3 taps = off</div>
 </div>
@@ -355,19 +306,17 @@ display:flex;justify-content:space-between;align-items:center}
 <div class="sum" id="sum"></div>
 
 <div>
-  <button class="btn-fire off" id="btnfire" onclick="handleFireBtn()"><span id="firelbl">CONNECTEZ-VOUS D'ABORD</span></button>
-  <button class="btn-dis" id="btndis" onclick="disarm()">Desarmer</button>
+  <button class="btnfire off" id="btnfire" onclick="handleFire()"><span id="firelbl">CONNECTEZ-VOUS D'ABORD</span></button>
+  <button class="btndis" id="btndis" onclick="disarm()">Desarmer</button>
 </div>
 
 <div class="logwrap">
-  <div class="loghd">
-    <span class="logt">Journal</span>
+  <div class="loghd"><span class="logt">Journal</span>
     <button class="logcl" onclick="document.getElementById('logbd').innerHTML=''">effacer</button>
   </div>
   <div class="logbd" id="logbd"></div>
 </div>
-
-</div><!-- /wrap -->
+</div>
 
 <script>
 // ============================================================
@@ -377,208 +326,159 @@ const BASE  = 'https://www.premier-service.fr/5.11.04/ics.php';
 const CLUB  = '57920076';
 const START = 'https://www.premier-service.fr/_start/index.php?club=' + CLUB;
 
-const COURTS = [
-  {id:27,n:7},{id:28,n:8},{id:29,n:9},
-  {id:30,n:10},{id:31,n:11},{id:32,n:12}
-];
-const SLOTS_1H = ['08:00','09:00','10:00','11:00','12:00','13:00',
-                  '14:00','15:00','16:00','17:00','18:00','19:00',
-                  '20:00','21:00','22:00'];
-const PARTNERS = [
-  {name:'Aucun',      val:null,   av:'--'},
-  {name:'D. Nozahic', val:'-100', av:'DN'},
-  {name:'L. Soule',   val:'-101', av:'LS'},
-  {name:'P. Binet',   val:'-102', av:'PB'},
-];
-const DAYS   = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
-const DAYSFR = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
-const MONTHS = ['Jan','Fev','Mar','Avr','Mai','Jun','Jul','Aou','Sep','Oct','Nov','Dec'];
+const COURTS  = [{id:27,n:7},{id:28,n:8},{id:29,n:9},{id:30,n:10},{id:31,n:11},{id:32,n:12}];
+const SLOTS1H = ['08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00'];
+const PARTNERS= [{name:'Aucun',val:null,av:'--'},{name:'D. Nozahic',val:'-100',av:'DN'},{name:'L. Soule',val:'-101',av:'LS'},{name:'P. Binet',val:'-102',av:'PB'}];
+const DAYS    = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+const DAYSFR  = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+const MONTHS  = ['Jan','Fev','Mar','Avr','Mai','Jun','Jul','Aou','Sep','Oct','Nov','Dec'];
 
-// ============================================================
-// STATE
-// ============================================================
 const S = {
-  connected: false,
-  grids: {},
-  activeTab: 3,
-  prio: [], partner: 0, slot: null,
-  armed: false, firing: false,
-  attempts: 0, success: false, iv: null,
+  connected:false, grids:{}, activeTab:3,
+  prio:[], partner:0, slot:null,
+  armed:false, firing:false, attempts:0, success:false, iv:null
 };
 
 // ============================================================
 // INIT
 // ============================================================
-function init() {
-  buildTabs();
-  buildSlots();
-  buildCourts();
-  buildPartners();
-  tick();
-  log('Pret. Etape 1 : ouvrez le site et connectez-vous.', 'li');
+function init(){
+  buildTabs(); buildSlots(); buildPartners(); tick();
+  log('Pret. Ouvrez le site et connectez-vous.','li');
 }
 
 // ============================================================
 // CLOCK
 // ============================================================
-function tick() {
-  const n = new Date();
+function tick(){
+  const n=new Date();
   const h=p2(n.getHours()),m=p2(n.getMinutes()),s=p2(n.getSeconds()),ms=String(n.getMilliseconds()).padStart(3,'0');
-  document.getElementById('clk').innerHTML = h+':'+m+':'+s+'<span class="clkms">.'+ms+'</span>';
-  document.getElementById('datclk').textContent = DAYS[n.getDay()]+' '+n.getDate()+' '+MONTHS[n.getMonth()];
-  const ft = (document.getElementById('firetime').value||'23:00').split(':').map(Number);
-  const tgt = new Date(n); tgt.setHours(ft[0],ft[1],0,0);
-  if(n>=tgt) tgt.setDate(tgt.getDate()+1);
-  const diff = tgt - n;
+  document.getElementById('clk').innerHTML=h+':'+m+':'+s+'<span class="clkms">.'+ms+'</span>';
+  document.getElementById('datclk').textContent=DAYS[n.getDay()]+' '+n.getDate()+' '+MONTHS[n.getMonth()];
+  const ft=(document.getElementById('firetime').value||'23:00').split(':').map(Number);
+  const tgt=new Date(n);tgt.setHours(ft[0],ft[1],0,0);
+  if(n>=tgt)tgt.setDate(tgt.getDate()+1);
+  const diff=tgt-n;
   const ch=Math.floor(diff/3600000),cm=Math.floor((diff%3600000)/60000),cs=Math.floor((diff%60000)/1000);
-  const el = document.getElementById('cd');
-  el.textContent = p2(ch)+':'+p2(cm)+':'+p2(cs);
-  el.className = 'cdnum'+(diff<10000?' hot':'');
-  document.getElementById('cdsub').textContent = diff<10000?'FEU IMMINENT':diff<60000?'bientot':'en attente';
-  if(S.armed && !S.firing && isJ3(S.activeTab)) {
-    const now = new Date();
-    if(now.getHours()===ft[0]&&now.getMinutes()===ft[1]&&now.getSeconds()===0) startFire();
+  const el=document.getElementById('cd');
+  el.textContent=p2(ch)+':'+p2(cm)+':'+p2(cs);
+  el.className='cdnum'+(diff<10000?' hot':'');
+  document.getElementById('cdsub').textContent=diff<10000?'FEU IMMINENT':diff<60000?'bientot':'en attente';
+  if(S.armed&&!S.firing&&isJ3(S.activeTab)){
+    const now=new Date();
+    if(now.getHours()===ft[0]&&now.getMinutes()===ft[1]&&now.getSeconds()===0)startFire();
   }
   requestAnimationFrame(tick);
 }
 
 // ============================================================
-// IFRAME — OUVERTURE DU SITE
+// CONNEXION
 // ============================================================
-function openSite() {
-  const win = document.getElementById('iframeWindow');
-  const frame = document.getElementById('siteFrame');
-  const status = document.getElementById('iframeStatus');
-  const urlEl = document.getElementById('iframeUrl');
-
-  win.classList.add('show');
-  frame.src = START;
-  urlEl.textContent = 'premier-service.fr - Connectez-vous puis revenez ici';
-  status.textContent = 'Connectez-vous, puis fermez et cliquez "Connexion etablie"';
-  status.style.color = 'var(--amber)';
-
-  // Mettre a jour step indicators
-  document.getElementById('cs1').className = 'cstep-num done';
-  document.getElementById('cs2').className = 'cstep-num active';
-  document.getElementById('ct2').innerHTML = '<b>Connectez-vous</b> dans la fenetre ci-dessous avec vos identifiants.';
-
-  // Montrer bouton "Connexion etablie"
-  document.getElementById('btnDone').style.display = 'block';
-  document.getElementById('btnOpen').textContent = 'ROUVRIR LE SITE';
-
-  log('Site ouvert dans la fenetre integree.','li');
-
-  // Surveiller l'iframe (on ne peut pas lire le contenu cross-origin mais on peut detecter les navigations)
-  frame.onload = function() {
-    const src = frame.src || '';
-    if (src.includes('ics.php') || src.includes('premier-service')) {
-      status.textContent = 'Site charge. Connectez-vous puis cliquez "Connexion etablie"';
-    }
-  };
+function openSite(){
+  // Ouvrir dans un nouvel onglet Chrome - l'utilisateur se connecte la-bas
+  window.open(START,'_blank');
+  // Activer le bouton "Connexion etablie"
+  document.getElementById('btnConfirm').classList.add('show');
+  document.getElementById('cs1').className='csn done';
+  document.getElementById('cs2').className='csn active';
+  log('Site ouvert dans un nouvel onglet. Connectez-vous puis revenez ici.','li');
 }
 
-function closeIframe() {
-  document.getElementById('iframeWindow').classList.remove('show');
-  document.getElementById('cs3').className = 'cstep-num active';
-}
+async function confirmAndLoad(){
+  const btn=document.getElementById('btnConfirm');
+  btn.textContent='CHARGEMENT...';btn.style.opacity='.6';btn.style.pointerEvents='none';
+  setDot('conn','Chargement des grilles...');
+  log('Chargement des 4 grilles...','li');
 
-// ============================================================
-// CONFIRMATION CONNEXION + CHARGEMENT GRILLES
-// ============================================================
-async function confirmLogin() {
-  document.getElementById('iframeWindow').classList.remove('show');
-  const btn = document.getElementById('btnDone');
-  btn.textContent = 'CHARGEMENT DES GRILLES...';
-  btn.className = 'btn-connect loading';
-  setDot('conn','Chargement grilles...');
-  log('Chargement des 4 grilles via session active...','li');
+  // Test de session: essayer de charger la grille
+  // Si l'utilisateur est connecte sur premier-service.fr dans Chrome,
+  // les cookies sont partages car meme navigateur
+  const results=await Promise.allSettled([loadGrid(0),loadGrid(1),loadGrid(2),loadGrid(3)]);
 
-  // Mettre a jour steps
-  document.getElementById('cs2').className = 'cstep-num done';
-  document.getElementById('cs3').className = 'cstep-num done';
+  // Verifier si au moins une grille a charge (signe que la session est active)
+  const anyLoaded=results.some(r=>r.status==='fulfilled'&&r.value===true);
 
-  // Charger les 4 grilles en utilisant la session du navigateur (cookies natifs)
-  // Maintenant que l'utilisateur est connecte sur premier-service.fr dans l'iframe,
-  // les cookies de session sont dans le navigateur => fetch avec credentials:'include' fonctionne
-  const results = await Promise.allSettled([
-    loadGrid(0), loadGrid(1), loadGrid(2), loadGrid(3)
-  ]);
+  if(!anyLoaded){
+    // Aucune grille chargee = probablement pas connecte
+    btn.textContent='CONNEXION ETABLIE - CHARGER';
+    btn.style.opacity='1';btn.style.pointerEvents='auto';
+    log('Grilles vides - etes-vous bien connecte sur premier-service.fr ?','lw');
+    log('Retournez sur l\'onglet premier-service.fr, connectez-vous, puis revenez ici.','lw');
+    setDot('','Non connecte ?');
+    return;
+  }
 
-  S.connected = true;
-  btn.textContent = 'CONNECTE ✓';
-  btn.className = 'btn-connect done';
+  S.connected=true;
+  btn.textContent='CONNECTE ✓';
+  document.getElementById('cs2').className='csn done';
   setDot('ok','Connecte');
-
-  // Activer UI
-  document.getElementById('tabsRow').style.opacity = '1';
-  document.getElementById('tabsRow').style.pointerEvents = 'auto';
-  document.getElementById('modeBadge').style.display = 'flex';
+  document.getElementById('tabsRow').style.opacity='1';
+  document.getElementById('tabsRow').style.pointerEvents='auto';
+  document.getElementById('modebadge').style.display='flex';
   lockCards(false);
-  buildTabs();
-  selectTab(3);
-  updateFireBtn();
+  buildTabs();selectTab(3);updateFireBtn();
 
-  // Rapport
-  results.forEach((r, i) => {
-    const dv = getTabDate(i);
-    const d = new Date(dv+'T12:00:00');
-    const label = ['Auj','J+1','J+2','J+3'][i]+' '+DAYS[d.getDay()]+' '+d.getDate();
-    const grid = S.grids[dv];
-    const nF = COURTS.filter(c=>grid?.courtStatus[c.id]?.free!==false&&!grid?.courtStatus[c.id]?.maint).length;
-    log(label+': '+nF+'/6 libres', nF>0?'lok':'lw');
+  results.forEach((r,i)=>{
+    const dv=tabDate(i);const d=new Date(dv+'T12:00:00');
+    const label=['Auj','J+1','J+2','J+3'][i]+' '+DAYS[d.getDay()]+' '+d.getDate();
+    const grid=S.grids[dv];
+    const nF=COURTS.filter(c=>grid?.courtStatus[c.id]?.free!==false&&!grid?.courtStatus[c.id]?.maint).length;
+    log(label+': '+nF+'/6 libres',nF>0?'lok':'lw');
   });
-  log('Pret. Choisissez un onglet et un creneau.','lok');
+  log('Pret ! Choisissez un onglet, creneau et terrain.','lok');
 }
 
 // ============================================================
-// CHARGER GRILLE (avec credentials natifs)
+// CHARGEMENT GRILLE
+// credentials:'include' = utilise les cookies Chrome (session ouverte par l'utilisateur)
 // ============================================================
-async function loadGrid(tabIdx) {
-  const dv = getTabDate(tabIdx);
-  try {
-    const ts = Date.now();
-    const url = BASE+'?idact=328&idses=S0&CHAMP_SELECTEUR_JOUR='+encodeURIComponent(ddfr(dv)+' '+dayname(dv))+'&_='+ts;
-    // credentials:'include' => utilise les cookies du navigateur => la session ouverte dans l'iframe
-    const r = await fetch(url, {credentials:'include'});
-    if (!r.ok) throw new Error('HTTP '+r.status);
-    const txt = await r.text();
+async function loadGrid(tabIdx){
+  const dv=tabDate(tabIdx);
+  const empty={
+    courtStatus:Object.fromEntries(COURTS.map(c=>[c.id,{free:true,maint:false,label:''}])),
+    slotStatus:Object.fromEntries(SLOTS1H.map(s=>[s,{free:true,allBlocked:false,partial:false}]))
+  };
+  try{
+    const ts=Date.now();
+    const url=BASE+'?idact=328&idses=S0&CHAMP_SELECTEUR_JOUR='+encodeURIComponent(ddfr(dv)+' '+dayname(dv))+'&_='+ts;
+    const r=await fetch(url,{credentials:'include'});
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    const txt=await r.text();
+    if(txt.length<100){S.grids[dv]=empty;return false;}
     log('Grille J+'+tabIdx+': '+txt.length+' octets','ld');
-    S.grids[dv] = parseGrid(txt);
+    S.grids[dv]=parseGrid(txt);
     return true;
-  } catch(e) {
-    log('Grille J+'+tabIdx+' indispo: '+e.message.slice(0,40),'lw');
-    S.grids[dv] = {
-      courtStatus: Object.fromEntries(COURTS.map(c=>[c.id,{free:true,maint:false,label:''}])),
-      slotStatus: Object.fromEntries(SLOTS_1H.map(s=>[s,{free:true,allBlocked:false,partial:false}]))
-    };
+  }catch(e){
+    log('Grille J+'+tabIdx+' echec: '+e.message.slice(0,40),'lw');
+    S.grids[dv]=empty;
     return false;
   }
 }
 
-function parseGrid(txt) {
-  const grid = {
-    courtStatus: Object.fromEntries(COURTS.map(c=>[c.id,{free:true,maint:false,label:''}])),
-    slotStatus: {}
+function parseGrid(txt){
+  const grid={
+    courtStatus:Object.fromEntries(COURTS.map(c=>[c.id,{free:true,maint:false,label:''}])),
+    slotStatus:{}
   };
-  const lteMap = {1:27,2:28,3:29,4:30,5:31,6:32};
-  const courtSlotMap = {};
-  const re = /\$\("([^"]+)"\)[^;]*addClass\("([^"]+)"\)/g;
+  const lteMap={1:27,2:28,3:29,4:30,5:31,6:32};
+  const csm={};
+  const re=/\$\("([^"]+)"\)[^;]*addClass\("([^"]+)"\)/g;
   let m;
-  while ((m=re.exec(txt))!==null) {
-    m[1].split(',').forEach(part=>{
-      const pm=part.trim().match(/#lte(\d+)[^#]*#ch_(\d{2})_(\d{2})/);
-      if(pm){const lte=parseInt(pm[1]),slot=pm[2]+':'+pm[3];if(!courtSlotMap[lte])courtSlotMap[lte]={};if(!courtSlotMap[lte][slot])courtSlotMap[lte][slot]=m[2];}
+  while((m=re.exec(txt))!==null){
+    m[1].split(',').forEach(p=>{
+      const pm=p.trim().match(/#lte(\d+)[^#]*#ch_(\d{2})_(\d{2})/);
+      if(pm){const l=parseInt(pm[1]),s=pm[2]+':'+pm[3];if(!csm[l])csm[l]={};if(!csm[l][s])csm[l][s]=m[2];}
     });
   }
   const mre=/CLUB\s*-\s*(\d+)[^<]*(?:<[^>]*>)*[^<]*MAINTENANCE/gi;
   while((m=mre.exec(txt))!==null){const c=COURTS.find(x=>x.n===parseInt(m[1]));if(c)grid.courtStatus[c.id].maint=true;}
-  SLOTS_1H.forEach(slot=>{
-    let blocked=0,free=0;
+  SLOTS1H.forEach(slot=>{
+    let bl=0,fr=0;
     COURTS.forEach(c=>{
-      const lte=Object.keys(lteMap).find(k=>parseInt(lteMap[k])===c.id);if(!lte)return;
-      /mpleine|fpleine/.test((courtSlotMap[parseInt(lte)]||{})[slot]||'')?blocked++:free++;
+      const l=Object.keys(lteMap).find(k=>parseInt(lteMap[k])===c.id);if(!l)return;
+      /mpleine|fpleine/.test((csm[parseInt(l)]||{})[slot]||'')?bl++:fr++;
     });
-    grid.slotStatus[slot]={free:free>0,allBlocked:free===0,partial:blocked>0&&free>0};
+    grid.slotStatus[slot]={free:fr>0,allBlocked:fr===0,partial:bl>0&&fr>0};
   });
   return grid;
 }
@@ -589,7 +489,7 @@ function parseGrid(txt) {
 function iso(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate())}
 function ddfr(s){const[y,m,d]=s.split('-');return d+'/'+m+'/'+y}
 function dayname(s){return DAYSFR[new Date(s+'T12:00:00').getDay()]}
-function getTabDate(i){const d=new Date();d.setDate(d.getDate()+i);return iso(d)}
+function tabDate(i){const d=new Date();d.setDate(d.getDate()+i);return iso(d)}
 function isJ3(i){return i===3}
 
 // ============================================================
@@ -597,47 +497,35 @@ function isJ3(i){return i===3}
 // ============================================================
 function buildTabs(){
   const c=document.getElementById('tabsRow');c.innerHTML='';
-  ['Auj.','J+1','J+2','J+3'].forEach((label,i)=>{
-    const dv=getTabDate(i);const d=new Date(dv+'T12:00:00');const isSnipe=isJ3(i);
-    const tab=document.createElement('div');
-    tab.className='tab'+(i===S.activeTab?(isSnipe?' sel-snipe':' sel-open'):'');
-    tab.innerHTML='<div class="tab-label">'+label+'</div>'+
-      '<div class="tab-day">'+DAYS[d.getDay()]+'</div>'+
-      '<div class="tab-date">'+d.getDate()+' '+MONTHS[d.getMonth()]+'</div>'+
-      (S.connected?'<span class="tab-badge '+(isSnipe?'tb-snipe':'tb-open')+'">'+(isSnipe?'SNIPE':'OPEN')+'</span>':'');
-    tab.onclick=()=>selectTab(i);
-    c.appendChild(tab);
+  ['Auj.','J+1','J+2','J+3'].forEach((lbl,i)=>{
+    const dv=tabDate(i);const d=new Date(dv+'T12:00:00');const sn=isJ3(i);
+    const t=document.createElement('div');
+    t.className='tab'+(i===S.activeTab?(sn?' ss':' so'):'');
+    t.innerHTML='<div class="tab-lbl">'+lbl+'</div><div class="tab-day">'+DAYS[d.getDay()]+'</div><div class="tab-dt">'+d.getDate()+' '+MONTHS[d.getMonth()]+'</div>'+(S.connected?'<span class="tab-badge '+(sn?'tb-s':'tb-o')+'">'+(sn?'SNIPE':'OPEN')+'</span>':'');
+    t.onclick=()=>selectTab(i);
+    c.appendChild(t);
   });
 }
-
-function selectTab(i){
-  S.activeTab=i;S.prio=[];S.slot=null;
-  buildTabs();updateModeBadge();buildSlots();buildCourts();updateSum();updateFireBtn();
-}
-
-function updateModeBadge(){
-  const el=document.getElementById('modeBadge');
+function selectTab(i){S.activeTab=i;S.prio=[];S.slot=null;buildTabs();updateMode();buildSlots();buildCourts();updateSum();updateFireBtn();}
+function updateMode(){
+  const el=document.getElementById('modebadge');
   if(!S.connected){el.style.display='none';return;}
   el.style.display='flex';
-  const dv=getTabDate(S.activeTab);const d=new Date(dv+'T12:00:00');
+  const dv=tabDate(S.activeTab);const d=new Date(dv+'T12:00:00');
   const ds=DAYS[d.getDay()]+' '+d.getDate()+' '+MONTHS[d.getMonth()];
   const ft=document.getElementById('firetime').value||'23:00';
   if(isJ3(S.activeTab)){
-    el.className='mode-badge snipe';
-    document.getElementById('modeIcon').textContent='';
-    document.getElementById('modeText').textContent='SNIPER — '+ds+' — Tir a '+ft;
+    el.className='modebadge mb-snipe';
+    document.getElementById('modetxt').textContent='SNIPER — '+ds+' — Tir a '+ft;
   } else {
-    el.className='mode-badge open';
-    document.getElementById('modeIcon').textContent='';
-    document.getElementById('modeText').textContent='RESERVATION DIRECTE — '+ds;
+    el.className='modebadge mb-open';
+    document.getElementById('modetxt').textContent='RESERVATION DIRECTE — '+ds;
   }
 }
-
-function lockCards(locked){
+function lockCards(l){
   ['card-slot','card-courts','card-partner','card-burst'].forEach(id=>{
-    const el=document.getElementById(id);
-    el.style.opacity=locked?'0.4':'1';
-    el.style.pointerEvents=locked?'none':'auto';
+    document.getElementById(id).style.opacity=l?'0.4':'1';
+    document.getElementById(id).style.pointerEvents=l?'none':'auto';
   });
 }
 
@@ -648,33 +536,32 @@ function buildSlots(){
   const g=document.getElementById('slotsgrid');
   const note=document.getElementById('slotnote');
   g.innerHTML='';
-  const dv=getTabDate(S.activeTab);const grid=S.grids[dv];const isSnipe=isJ3(S.activeTab);
-  SLOTS_1H.forEach(t=>{
+  const dv=tabDate(S.activeTab);const grid=S.grids[dv];const sn=isJ3(S.activeTab);
+  SLOTS1H.forEach(t=>{
     const st=grid?.slotStatus[t]||{free:true};
     const b=document.createElement('button');
     let cls='sl';
-    if(t===S.slot) cls+=isSnipe?' on-snipe':' on';
-    else if(S.connected&&st.allBlocked) cls+=' blocked';
-    else if(S.connected&&st.partial) cls+=' partial';
+    if(t===S.slot)cls+=sn?' ons':' on';
+    else if(S.connected&&st.allBlocked)cls+=' blocked';
+    else if(S.connected&&st.partial)cls+=' partial';
     b.className=cls;
-    b.innerHTML=t.slice(0,5)+(S.connected&&st.partial?'<span class="sl-dot partial"></span>':'')+(S.connected&&st.allBlocked?'<span class="sl-dot taken"></span>':'');
+    b.innerHTML=t.slice(0,5)+(S.connected&&st.partial?'<span class="sld p"></span>':'')+(S.connected&&st.allBlocked?'<span class="sld t"></span>':'');
     b.onclick=()=>{
       if(b.classList.contains('blocked'))return;
-      document.querySelectorAll('.sl').forEach(x=>x.classList.remove('on','on-snipe'));
-      b.classList.add(isSnipe?'on-snipe':'on');
-      S.slot=t;buildCourts();updateSum();updateFireBtn();
+      document.querySelectorAll('.sl').forEach(x=>x.classList.remove('on','ons'));
+      b.classList.add(sn?'ons':'on');S.slot=t;buildCourts();updateSum();updateFireBtn();
     };
     g.appendChild(b);
   });
-  note.textContent=isSnipe?'J+3 - Gris = bloque profs. Votre creneau cible pour 23h.':'Gris = tous pris. Orange = partiel.';
+  note.textContent=sn?'J+3 - Gris/rouge = bloque profs. Choisissez votre creneau.':'Gris = tous pris. Orange = partiel.';
 }
 
 // ============================================================
 // COURTS
 // ============================================================
 function buildCourts(){
-  const g=document.getElementById('courtsgrid');const msg=document.getElementById('gridmsg');g.innerHTML='';
-  const dv=getTabDate(S.activeTab);const grid=S.grids[dv];const isSnipe=isJ3(S.activeTab);
+  const g=document.getElementById('cgrid');const msg=document.getElementById('gridmsg');g.innerHTML='';
+  const dv=tabDate(S.activeTab);const grid=S.grids[dv];const sn=isJ3(S.activeTab);
   if(!S.connected){msg.style.display='block';msg.textContent='Connectez-vous d\'abord.';return;}
   if(!S.slot){msg.style.display='block';msg.textContent='Selectionnez un creneau.';return;}
   msg.style.display='none';
@@ -682,22 +569,21 @@ function buildCourts(){
     const st=grid?.courtStatus[c.id]||{free:true,maint:false};const pi=S.prio.indexOf(c.id);
     let cls='ct';
     if(st.maint)cls+=' maint';
-    else if(!st.free)cls+=isSnipe?' preview-na':' na';
+    else if(!st.free)cls+=sn?' pna':' na';
     else if(pi===0)cls+=' p1';
     else if(pi>0)cls+=' p2';
     const el=document.createElement('div');el.className=cls;
     let badge='';
-    if(st.maint)badge='<span class="ct-badge bm">MAINT</span>';
-    else if(!st.free)badge='<span class="ct-badge bna">'+(isSnipe?'PROF':'PRIS')+'</span>';
-    else if(pi===0)badge='<span class="ct-badge bp1">P1</span>';
-    else if(pi>0)badge='<span class="ct-badge bp2">P'+(pi+1)+'</span>';
-    el.innerHTML=badge+'<div class="ct-n">'+c.n+'</div><div class="ct-sub">'+(st.label||'Court')+'</div>';
-    if(!st.maint&&st.free)el.onclick=()=>cycleCourt(c.id);
+    if(st.maint)badge='<span class="ctb bm">MAINT</span>';
+    else if(!st.free)badge='<span class="ctb bna">'+(sn?'PROF':'PRIS')+'</span>';
+    else if(pi===0)badge='<span class="ctb bp1">P1</span>';
+    else if(pi>0)badge='<span class="ctb bp2">P'+(pi+1)+'</span>';
+    el.innerHTML=badge+'<div class="ctn">'+c.n+'</div><div class="cts">'+(st.label||'Court')+'</div>';
+    if(!st.maint&&st.free)el.onclick=()=>cycleCt(c.id);
     g.appendChild(el);
   });
 }
-
-function cycleCourt(id){
+function cycleCt(id){
   const i=S.prio.indexOf(id);
   if(i===-1)S.prio=[id,...S.prio];
   else if(i===0&&S.prio.length>1)S.prio=[...S.prio.slice(1),id];
@@ -712,7 +598,7 @@ function buildPartners(){
   const c=document.getElementById('plist');c.innerHTML='';
   PARTNERS.forEach((p,i)=>{
     const el=document.createElement('div');el.className='pt'+(S.partner===i?' on':'');
-    el.innerHTML='<div class="ptav">'+p.av+'</div><div style="flex:1"><div class="ptname">'+p.name+'</div><div class="ptval">'+(p.val||'sans partenaire')+'</div></div>';
+    el.innerHTML='<div class="ptav">'+p.av+'</div><div style="flex:1"><div class="ptn">'+p.name+'</div><div class="ptv">'+(p.val||'sans partenaire')+'</div></div>';
     el.onclick=()=>{S.partner=i;buildPartners();updateSum();};
     c.appendChild(el);
   });
@@ -724,13 +610,13 @@ function buildPartners(){
 function updateSum(){
   const box=document.getElementById('sum');
   if(!S.connected||!S.slot){box.classList.remove('on');return;}
-  const dv=getTabDate(S.activeTab);const d=new Date(dv+'T12:00:00');
+  const dv=tabDate(S.activeTab);const d=new Date(dv+'T12:00:00');
   const ds=DAYS[d.getDay()]+' '+d.getDate()+' '+MONTHS[d.getMonth()];
   const ft=document.getElementById('firetime').value||'23:00';
-  const nextH=p2(parseInt(S.slot)+1);const isSnipe=isJ3(S.activeTab);
+  const nh=p2(parseInt(S.slot)+1);const sn=isJ3(S.activeTab);
   const courts=S.prio.length?S.prio.map((id,i)=>'<b>Court '+(COURTS.find(c=>c.id===id)?.n||id)+'</b>'+(i===0?' P1':' P2')).join(' / '):'<span style="color:var(--muted)">1er libre</span>';
-  box.className='sum on'+(isSnipe?' snipe-sum':'');
-  box.innerHTML=(isSnipe?'SNIPER ':'DIRECT ')+'<b>'+ds+'</b><span class="sep">|</span><b>'+S.slot+'-'+nextH+'h</b><span class="sep">|</span>'+courts+'<br><b>'+PARTNERS[S.partner].name+'</b>'+(isSnipe?'<span class="sep">|</span>Tir <b>'+ft+'</b>':'')+'<span class="sep">|</span><b>'+document.getElementById('brate').value+' req/s</b>';
+  box.className='sum on'+(sn?' ss':'');
+  box.innerHTML=(sn?'SNIPER ':'DIRECT ')+'<b>'+ds+'</b><span class="sep">|</span><b>'+S.slot+'-'+nh+'h</b><span class="sep">|</span>'+courts+'<br><b>'+PARTNERS[S.partner].name+'</b>'+(sn?'<span class="sep">|</span>Tir <b>'+ft+'</b>':'')+'<span class="sep">|</span><b>'+document.getElementById('brate').value+' req/s</b>';
 }
 
 // ============================================================
@@ -738,37 +624,36 @@ function updateSum(){
 // ============================================================
 function updateFireBtn(){
   const btn=document.getElementById('btnfire');const lbl=document.getElementById('firelbl');
-  if(!S.connected){btn.className='btn-fire off';lbl.textContent='CONNECTEZ-VOUS D\'ABORD';return;}
-  if(!S.slot){btn.className='btn-fire off';lbl.textContent='CHOISISSEZ UN CRENEAU';return;}
+  if(!S.connected){btn.className='btnfire off';lbl.textContent='CONNECTEZ-VOUS D\'ABORD';return;}
+  if(!S.slot){btn.className='btnfire off';lbl.textContent='CHOISISSEZ UN CRENEAU';return;}
   if(S.firing||S.armed)return;
   if(isJ3(S.activeTab)){
     const ft=document.getElementById('firetime').value||'23:00';
-    btn.className='btn-fire snipe-mode';lbl.textContent='ARMER SNIPER - TIR A '+ft;
+    btn.className='btnfire sm';lbl.textContent='ARMER SNIPER - TIR A '+ft;
   } else {
-    btn.className='btn-fire';lbl.textContent='RESERVER MAINTENANT';
+    btn.className='btnfire';lbl.textContent='RESERVER MAINTENANT';
   }
 }
-
-function handleFireBtn(){
+function handleFire(){
   if(!S.connected||!S.slot)return;
   if(S.firing)return;
-  if(isJ3(S.activeTab)){if(S.armed){startFire();}else{armSniper();}}
+  if(isJ3(S.activeTab)){S.armed?startFire():armSniper();}
   else{startFire();}
 }
-
 function armSniper(){
   S.armed=true;S.attempts=0;S.success=false;
   const ft=document.getElementById('firetime').value||'23:00';
-  document.getElementById('btnfire').className='btn-fire armed';
-  document.getElementById('firelbl').textContent='ARME - TIR A '+ft+' | TAP POUR TIRER';
+  document.getElementById('btnfire').className='btnfire armed';
+  document.getElementById('firelbl').textContent='ARME - '+ft+' | TAP = TIR IMMEDIAT';
   document.getElementById('btndis').classList.add('on');
-  const sa=document.getElementById('sbatt');sa.style.display='flex';document.getElementById('attn').textContent='0';
-  setDot('armed','Arme - '+ft+':00');
-  const dv=getTabDate(S.activeTab);const d=new Date(dv+'T12:00:00');
-  log('ARME - '+DAYS[d.getDay()]+' '+d.getDate()+' a '+S.slot,'lw');
-  S.prio.length&&log('Courts: '+S.prio.map(id=>'C'+(COURTS.find(c=>c.id===id)?.n||id)).join('>'),'li');
+  document.getElementById('sbatt').style.display='flex';
+  document.getElementById('attn').textContent='0';
+  setDot('armed','Arme - declenchement a '+ft);
+  const dv=tabDate(S.activeTab);const d=new Date(dv+'T12:00:00');
+  log('ARME - '+DAYS[d.getDay()]+' '+d.getDate()+' '+MONTHS[d.getMonth()]+' a '+S.slot,'lw');
+  if(S.prio.length)log('Courts: '+S.prio.map(id=>'C'+(COURTS.find(c=>c.id===id)?.n||id)).join('>'),'li');
+  log('Partenaire: '+PARTNERS[S.partner].name,'li');
 }
-
 function disarm(){
   clearInterval(S.iv);S.armed=false;S.firing=false;
   updateFireBtn();document.getElementById('btndis').classList.remove('on');
@@ -777,21 +662,21 @@ function disarm(){
 }
 
 // ============================================================
-// FIRING — requetes natives avec credentials (cookies du navigateur)
+// FIRING
 // ============================================================
 async function startFire(){
   if(S.firing)return;S.firing=true;
-  document.getElementById('btnfire').className='btn-fire firing';
+  document.getElementById('btnfire').className='btnfire firing';
   document.getElementById('firelbl').textContent='FEU EN COURS...';
   setDot('firing','Rafale active');
-  log((isJ3(S.activeTab)?'SNIPER':'DIRECT')+' - Debut rafale...','lw');
+  log((isJ3(S.activeTab)?'SNIPER':'DIRECT')+' - Rafale...','lw');
 
   const rps=parseInt(document.getElementById('brate').value);
   const dur=parseInt(document.getElementById('bdur').value)*1000;
   const stop=document.getElementById('stopok').value==='1';
   const ivl=Math.max(50,Math.floor(1000/rps));
   const t0=Date.now();
-  const dv=getTabDate(S.activeTab);const grid=S.grids[dv];
+  const dv=tabDate(S.activeTab);const grid=S.grids[dv];
   let ap=[...S.prio];
   if(!ap.length)ap=COURTS.filter(c=>grid?.courtStatus[c.id]?.free!==false&&!grid?.courtStatus[c.id]?.maint).map(c=>c.id);
   if(!ap.length)ap=COURTS.map(c=>c.id);
@@ -799,17 +684,18 @@ async function startFire(){
   S.iv=setInterval(async()=>{
     if(S.success&&stop){endFire(true);return;}
     if(Date.now()-t0>dur){endFire(false);return;}
-    S.attempts++;document.getElementById('attn').textContent=S.attempts;
-    const cid=ap[0];const r=await sendResa(cid);
+    S.attempts++;
+    document.getElementById('attn').textContent=S.attempts;
+    const cid=ap[0];
+    const r=await sendResa(cid);
     if(r.ok){
       S.success=true;
-      log('RESERVE ! Court '+(COURTS.find(c=>c.id===cid)?.n)+' #'+S.attempts,'lok');
-      if(PARTNERS[S.partner].val)await confPartner();
-      await confFinal();
+      log('RESERVE CONFIRME ! Court '+(COURTS.find(c=>c.id===cid)?.n)+' #'+S.attempts,'lok');
       if(stop)endFire(true);
-    } else {
-      if(r.pris&&ap.length>1){log('Court '+(COURTS.find(c=>c.id===ap[0])?.n)+' pris > rotation','lw');ap.shift();}
-      if(S.attempts<=5||S.attempts%25===0)log('#'+S.attempts+' '+r.err,'ler');
+    } else if(r.pris&&ap.length>1){
+      log('Court '+(COURTS.find(c=>c.id===ap[0])?.n)+' pris > rotation','lw');ap.shift();
+    } else if(S.attempts<=5||S.attempts%25===0){
+      log('#'+S.attempts+' '+r.err,'ler');
     }
   },ivl);
 }
@@ -818,7 +704,7 @@ function endFire(ok){
   clearInterval(S.iv);S.firing=false;S.armed=false;
   document.getElementById('btndis').classList.remove('on');
   if(ok){
-    document.getElementById('btnfire').className='btn-fire ok';
+    document.getElementById('btnfire').className='btnfire ok';
     document.getElementById('firelbl').textContent='RESERVE ! '+S.attempts+' tentative(s)';
     setDot('ok','Confirme ('+S.attempts+')');
   } else {
@@ -829,40 +715,69 @@ function endFire(ok){
 }
 
 // ============================================================
-// HTTP — fetch natif avec credentials:'include'
-// Les cookies de session sont ceux du navigateur (ouverts via iframe)
-// Pas de proxy, pas de CORS, connexion directe et authentifiee
+// RESERVATION — FLUX CORRECT EN 3 ETAPES
+//
+// FLUX REEL (verifie par Proxyman):
+// 1. POST idact=336 => retourne page de confirmation ("Valider la reservation")
+//    - si bouton_valider present => creneau disponible, continuer
+//    - si absent => echec (creneau pris ou erreur)
+// 2. POST idact=332 => selectionner partenaire (si partenaire choisi)
+// 3. POST idact=366 => VALIDER => retourne la grille (idact=328 present)
+//    - si idact=328 dans reponse => SUCCES CONFIRME
+//    - sinon => echec
 // ============================================================
 async function sendResa(cid){
   try{
-    const dv=getTabDate(S.activeTab);const cj=encodeURIComponent(ddfr(dv)+' '+dayname(dv));
-    const[h,m]=S.slot.split(':').map(Number);const sc=h*2+(m>=30?1:0);
-    const rand=Math.floor(Math.random()*99999999999999);
+    const dv=tabDate(S.activeTab);
+    const cj=encodeURIComponent(ddfr(dv)+' '+dayname(dv));
+    const[h,m]=S.slot.split(':').map(Number);
+    const sc=h*2+(m>=30?1:0);
+    const rand=()=>Math.floor(Math.random()*99999999999999);
     const idpar=PARTNERS[S.partner].val?PARTNERS[S.partner].val.replace('-',''):'';
-    const body='idact=336&idpge=210-'+rand+'&IDOBJ='+sc+'_0_'+cid+'&idses=S0&idcrt='+cid+
+    const opts={method:'POST',credentials:'include',headers:{'Content-Type':'application/x-www-form-urlencoded'}};
+
+    // ETAPE 1: Demande de reservation
+    const body1='idact=336&idpge=210-'+rand()+'&IDOBJ='+sc+'_0_'+cid+'&idses=S0&idcrt='+cid+
       '&idpro=&idpar='+idpar+'&pw=60&dj=2&userid=&usermd5=&club=&B_MOJJO=0'+
       '&LISTE_RESA_BOURSE_DATE_JEU=&LISTE_RESA_BOURSE_HEURE_JEU=&LISTE_RESA_BOURSE_COURT_JEU='+
       '&CHAMP_SELECTEUR_JEU=1&ID_TABLEAU=1%7C'+CLUB+'%7C1&CHAMP_SELECTEUR_JOUR='+cj+'&nc=60';
-    const r=await fetch(BASE,{method:'POST',credentials:'include',headers:{'Content-Type':'application/x-www-form-urlencoded'},body});
-    const txt=await r.text();
-    if(/confirm|valid|succes/i.test(txt)||txt.includes('idact=332')||txt.includes('partenaire'))return{ok:true};
-    if(/indisponible|occup|pris|taken/i.test(txt))return{ok:false,pris:true,err:'Pris'};
-    return{ok:false,err:'HTTP '+r.status};
-  }catch(e){return{ok:false,err:e.message.slice(0,30)};}
+    const r1=await fetch(BASE,{...opts,body:body1});
+    const t1=await r1.text();
+
+    // Verifier si le creneau est disponible
+    if(!t1.includes('bouton_valider')&&!t1.includes('Valider la r')){
+      // Pas de bouton valider = creneau pris ou erreur
+      const pris=/indisponible|impossible|deja r|complet|Ce cr/i.test(t1);
+      return{ok:false,pris,err:pris?'Pris':'Pas de bouton valider'};
+    }
+
+    // ETAPE 2: Confirmer partenaire (si besoin)
+    const p=PARTNERS[S.partner];
+    if(p.val){
+      const v=p.val.replace('-','');
+      const body2='idact=332&idpge=330-'+rand()+'&IDOBJ='+v+'&IDREF=&idtpa=&idpar='+v+'&rcout=&b_i=0&idses=S0&CHAMP_TYPE_1='+p.val;
+      await fetch(BASE,{...opts,body:body2});
+    }
+
+    // ETAPE 3: Valider la reservation
+    const body3='idact=366&idpge=330-'+rand()+'&IDOBJ=&IDREF=&idtpa=&idpar=&rcout=&b_i=0&idses=S0';
+    const r3=await fetch(BASE,{...opts,body:body3});
+    const t3=await r3.text();
+
+    // SUCCES CONFIRME: la reponse de idact=366 contient la grille (idact=328)
+    if(t3.includes('idact=328')||t3.includes('CHAMP_SELECTEUR_JOUR')){
+      return{ok:true};
+    }
+
+    // Echec inattendu
+    return{ok:false,err:'Validation echouee ('+t3.length+'o)'};
+
+  }catch(e){return{ok:false,err:e.message.slice(0,40)};}
 }
 
-async function confPartner(){
-  const p=PARTNERS[S.partner];if(!p.val)return;
-  const v=p.val.replace('-','');const rand=Math.floor(Math.random()*99999999999999);
-  await fetch(BASE,{method:'POST',credentials:'include',headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:'idact=332&idpge=330-'+rand+'&IDOBJ='+v+'&IDREF=&idtpa=&idpar='+v+'&rcout=&b_i=0&idses=S0&CHAMP_TYPE_1='+p.val}).catch(()=>{});
-}
-async function confFinal(){
-  const rand=Math.floor(Math.random()*99999999999999);
-  await fetch(BASE,{method:'POST',credentials:'include',headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:'idact=366&idpge=330-'+rand+'&IDOBJ=&IDREF=&idtpa=&idpar=&rcout=&b_i=0&idses=S0'}).catch(()=>{});
-}
-
+// ============================================================
+// UTILS
+// ============================================================
 function setDot(cls,msg){document.getElementById('dot').className='dot'+(cls?' '+cls:'');document.getElementById('sbmsg').textContent=msg;}
 function log(msg,type){
   const bd=document.getElementById('logbd');const e=document.createElement('div');e.className='le';
